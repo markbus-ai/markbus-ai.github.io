@@ -130,3 +130,21 @@ document.querySelectorAll('nav a').forEach(anchor => {
         });
     });
 });
+// Animación de las barras de habilidades
+function animateSkills() {
+    document.querySelectorAll('.skill-progress').forEach(bar => {
+        const target = bar.getAttribute('data-progress');
+        bar.style.width = target + '%';
+    });
+}
+
+// Llamar a la función cuando la sección de habilidades entre en el viewport
+const skillsSection = document.querySelector('#skills');
+const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+        animateSkills();
+        observer.unobserve(skillsSection);
+    }
+}, { threshold: 0.5 });
+
+observer.observe(skillsSection);

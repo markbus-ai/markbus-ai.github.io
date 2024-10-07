@@ -7,7 +7,7 @@
             --text: #f8fafc;
             --text-secondary: #94a3b8;
         }
-
+        /* Micro-interacciones para botones */
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             margin: 0;
@@ -50,8 +50,34 @@
             text-decoration: none;
             margin-left: 2rem;
             font-weight: 500;
+            .button {
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+    
+            .button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+    
+            .button:active {
+                transform: translateY(0);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
             transition: all 0.3s ease;
             position: relative;
+        }
+        .skill-bar {
+            height: 10px;
+            background: var(--surface);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: var(--primary);
+            width: 0;
+            transition: width 1s ease;
         }
 
         nav a::after {
@@ -626,4 +652,65 @@
     .project-buttons {
         flex-direction: column;
     }
+}
+/* Animación de entrada para las tarjetas de proyectos */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card {
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Transición suave para los elementos de tecnología */
+.tech-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.dark-mode {
+    --background: #1a1a1a;
+    --surface: #2a2a2a;
+    --text: #ffffff;
+    --text-secondary: #b0b0b0;
+}
+/* Personalización de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
 }
