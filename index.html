@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markbusking - Portafolio</title>
+    <title>Markbusking - Desarrollador Backend Python</title>
+    <meta name="description" content="Desarrollador Backend especializado en Python, FastAPI y Flask. Creando soluciones eficientes y escalables.">
+    <meta name="keywords" content="python, backend, desarrollo, fastapi, flask, sql">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
 </head>
 <body>
     <header>
-        <nav>
+        <nav role="navigation" aria-label="Navegación principal">
             <h1>Mi portafolio</h1>
             <div>
                 <a href="#about">Sobre mí</a>
@@ -19,7 +23,7 @@
         </nav>
     </header>
 
-    <main>
+    <main role="main">
         <section class="hero">
             <h2>Bienvenidos, soy Markbusking</h2>
             <p>Convirtiendo ideas en soluciones elegantes a través del código</p>
@@ -36,8 +40,10 @@
         </section>
         
         <section id="projects" class="projects">
-            <h2>Mis Projectos</h2>
-            <div class="project-grid" id="projectGrid"></div>
+            <h2>Mis Proyectos</h2>
+            <div class="project-grid" id="projectGrid">
+                <!-- El contenido se generará dinámicamente desde JavaScript -->
+            </div>
         </section>
         <section id="technologies" class="technologies">
             <h2>Tecnologías & Habilidades</h2>
@@ -165,30 +171,88 @@
                             <div class="tech-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9 9 0 0 0-9 9"></path><polyline points="3 12 3 15 6 15"></polyline><polyline points="21 12 21 15 18 15"></polyline></svg>
                             </div>
-                            <span class="tech-name">API Integration</span>
+                            <span class="tech-name">API</span>
                             <span class="tech-level">Intermedio</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer id="contact">
-        <h2>Contáctame</h2>
-        <div class="social-links">
-            <a href="https://github.com/markbus-ai" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/marcos-bustos-7327962ab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            </a>
-            <a href="img/marcossbustoss.pdf" target="_blank" rel="noopener noreferrer" download aria-label="Descargar CV">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-            </a>
-        </div>
-        <p class="copyright">&copy; 2024 Markbusking. Todos los derechos reservados.</p>
-    </footer>
+        <!-- Achievements section -->
+        <section id="achievements" class="achievements">
+            <h2>Logros Destacados</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🚀</div>
+                    <h3>Sistema de Pedidos</h3>
+                    <p>Implementación exitosa en restaurantes locales mejorando la eficiencia en un 40%</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🤖</div>
+                    <h3>Chatbot IA</h3>
+                    <p>Integración avanzada con API de Gemini para procesamiento de lenguaje natural</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">💼</div>
+                    <h3>Bolsa de Trabajo</h3>
+                    <p>Plataforma que conecta estudiantes certificados con empleadores potenciales</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience section -->
+        <section id="experience" class="experience">
+            <h2>Mi Trayectoria</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>Testing De Aplicaciones</h3>
+                        <p>CFP 403</p>
+                        <ul>
+                            <li>Desarrollo de pruebas automatizadas</li>
+                            <li>Testing de aplicaciones web y móviles</li>
+                            <li>Metodologías ágiles</li>
+                            <li>Selenium, JUnit, TestNG</li>
+                            <li>Testing funcional y no funcional</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>Programación Backend</h3>
+                        <p>CFP 403</p>
+                        <ul>
+                            <li>Desarrollo de APIs y servicios web</li>
+                            <li>Python, FastAPI, Flask</li>
+                            <li>Bases de datos SQL</li>
+                            <li>Arquitectura de software</li>
+                            <li>Patrones de diseño</li>
+                        </ul>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Contact section -->
+        <footer id="contact">
+            <h2>Contáctame</h2>
+            <div class="social-links">
+                <a href="https://github.com/markbus-ai" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/marcos-bustos-7327962ab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="img/marcossbustoss.pdf" target="_blank" rel="noopener noreferrer" download aria-label="Descargar CV">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2024 Markbusking. Todos los derechos reservados.</p>
+        </footer>
+    </main>
 
     <div id="myModal" class="modal">
         <div class="modal-content">

@@ -10,8 +10,10 @@ const projects = [
             "img/comanda3.png",
             "img/comanda4.png"
         ],
-        tech: ["Python", "Sqlite", "Pyqt5", "FastApi", "Flutter"]
-        
+        tech: ["Python", "Sqlite", "Pyqt5", "FastApi", "Flutter"],
+        impact: "Aumentó la eficiencia en la gestión de pedidos en un 40%",
+        challenges: "Implementación de sincronización en tiempo real entre dispositivos móviles y sistema central",
+        solution: "Utilización de WebSockets para actualizaciones instantáneas y SQLite para gestión de datos local"
     },
     {
         title: "Chatbot con API de Gemini",
@@ -51,38 +53,78 @@ const prevBtn = document.querySelector('.carousel-button.prev');
 const nextBtn = document.querySelector('.carousel-button.next');
 let currentSlide = 0;
 
-// Create project cards
-projects.forEach((project, index) => {
-    const projectCard = document.createElement('div');
-    projectCard.className = 'project-card';
-    projectCard.innerHTML = `
-        <img src="${project.images[0]}" alt="${project.title}">
-        <div class="project-content">
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <div class="tech-tags">
-                ${project.tech.map(tag => `<span class="tech-tag">${tag}</span>`).join('')}
-            </div>
-            <div class="project-buttons">
-                <button class="view-details" data-index="${index}">Ver detalles</button>
-                <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">Ver proyecto</a>
-            </div>
-        </div>
-    `;
-    projectGrid.appendChild(projectCard);
-});
+// Corregir la duplicación de código y el error del observer
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px"
+};
 
-// Modal functionality
-document.querySelectorAll('.view-details').forEach(button => {
-    button.addEventListener('click', function() {
-        const project = projects[this.getAttribute('data-index')];
-        modalTitle.innerText = project.title;
-        modalDescription.innerText = project.details;
-        modalTechTags.innerHTML = project.tech.map(tag => `<span class="tech-tag">${tag}</span>`).join('');
-        carouselImages.innerHTML = project.images.map(img => `<img class="carousel-image" src="${img}" alt="Project Image">`).join('');
-        currentSlide = 0;
-        updateCarousel();
-        modal.style.display = 'block';
+// Unificar los observers en uno solo
+const animationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            if (entry.target.classList.contains('skill-progress')) {
+                const target = entry.target.getAttribute('data-progress');
+                entry.target.style.width = target + '%';
+            } else {
+                entry.target.classList.add('visible');
+            }
+            animationObserver.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Crear project cards una sola vez
+function createProjectCards() {
+    projectGrid.innerHTML = ''; // Limpiar el contenedor primero
+    projects.forEach((project, index) => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        projectCard.innerHTML = `
+            <img src="${project.images[0]}" alt="${project.title}" loading="lazy">
+            <div class="project-content">
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="tech-tags">
+                    ${project.tech.map(tag => `<span class="tech-tag">${tag}</span>`).join('')}
+                </div>
+                <div class="project-buttons">
+                    <button class="view-details" data-index="${index}">Ver detalles</button>
+                    ${project.link ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">Ver proyecto</a>` : ''}
+                </div>
+            </div>
+        `;
+        projectGrid.appendChild(projectCard);
+        animationObserver.observe(projectCard);
+    });
+
+    // Agregar event listeners a los botones después de crearlos
+    document.querySelectorAll('.view-details').forEach(button => {
+        button.addEventListener('click', function() {
+            const project = projects[this.getAttribute('data-index')];
+            openProjectModal(project);
+        });
+    });
+}
+
+// Función para abrir el modal
+function openProjectModal(project) {
+    modalTitle.innerText = project.title;
+    modalDescription.innerText = project.details;
+    modalTechTags.innerHTML = project.tech.map(tag => `<span class="tech-tag">${tag}</span>`).join('');
+    carouselImages.innerHTML = project.images.map(img => `<img class="carousel-image" src="${img}" alt="Project Image">`).join('');
+    currentSlide = 0;
+    updateCarousel();
+    modal.style.display = 'block';
+}
+
+// Inicializar la página
+document.addEventListener('DOMContentLoaded', () => {
+    createProjectCards();
+    
+    // Observar elementos para animaciones
+    document.querySelectorAll('.achievement-card, .timeline-item, .skill-progress').forEach(el => {
+        animationObserver.observe(el);
     });
 });
 
@@ -130,21 +172,3 @@ document.querySelectorAll('nav a').forEach(anchor => {
         });
     });
 });
-// Animación de las barras de habilidades
-function animateSkills() {
-    document.querySelectorAll('.skill-progress').forEach(bar => {
-        const target = bar.getAttribute('data-progress');
-        bar.style.width = target + '%';
-    });
-}
-
-// Llamar a la función cuando la sección de habilidades entre en el viewport
-const skillsSection = document.querySelector('#skills');
-const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-        animateSkills();
-        observer.unobserve(skillsSection);
-    }
-}, { threshold: 0.5 });
-
-observer.observe(skillsSection);
