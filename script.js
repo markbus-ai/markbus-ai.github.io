@@ -53,27 +53,32 @@ const prevBtn = document.querySelector('.carousel-button.prev');
 const nextBtn = document.querySelector('.carousel-button.next');
 let currentSlide = 0;
 
-// Corregir la duplicación de código y el error del observer
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px"
-};
-
-// Unificar los observers en uno solo
+// Definición del observer
 const animationObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            if (entry.target.classList.contains('skill-progress')) {
-                const target = entry.target.getAttribute('data-progress');
-                entry.target.style.width = target + '%';
-            } else {
-                entry.target.classList.add('visible');
-            }
-            animationObserver.unobserve(entry.target);
+            // Lógica para manejar la animación
+            entry.target.classList.add('visible');
         }
     });
-}, observerOptions);
+});
 
+document.addEventListener('DOMContentLoaded', () => {
+    createProjectCards();
+    
+    // Observar elementos para animaciones
+    document.querySelectorAll('.achievement-card, .timeline-item, .skill-progress').forEach(el => {
+        animationObserver.observe(el);
+    });
+
+    // Manejar el menú hamburguesa
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+});
 // Crear project cards una sola vez
 function createProjectCards() {
     projectGrid.innerHTML = ''; // Limpiar el contenedor primero
@@ -105,70 +110,11 @@ function createProjectCards() {
             openProjectModal(project);
         });
     });
-}
-
-// Función para abrir el modal
-function openProjectModal(project) {
-    modalTitle.innerText = project.title;
-    modalDescription.innerText = project.details;
-    modalTechTags.innerHTML = project.tech.map(tag => `<span class="tech-tag">${tag}</span>`).join('');
-    carouselImages.innerHTML = project.images.map(img => `<img class="carousel-image" src="${img}" alt="Project Image">`).join('');
-    currentSlide = 0;
-    updateCarousel();
-    modal.style.display = 'block';
-}
-
-// Inicializar la página
-document.addEventListener('DOMContentLoaded', () => {
-    createProjectCards();
-    
-    // Observar elementos para animaciones
-    document.querySelectorAll('.achievement-card, .timeline-item, .skill-progress').forEach(el => {
-        animationObserver.observe(el);
-    });
-});
-
-// Close modal
-closeBtn.onclick = function() {
-    modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
-
-// Carousel functionality
-function updateCarousel() {
-    carouselImages.style.transform = `translateX(-${currentSlide * 100}%)`;
-}
-
-prevBtn.addEventListener('click', function() {
-    const totalSlides = carouselImages.children.length;
-    currentSlide = (currentSlide === 0) ? totalSlides - 1 : currentSlide - 1;
-    updateCarousel();
-});
-
-nextBtn.addEventListener('click', function() {
-    const totalSlides = carouselImages.children.length;
-    currentSlide = (currentSlide === totalSlides - 1) ? 0 : currentSlide + 1;
-    updateCarousel();
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        const headerOffset = 80;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
+    // Agregar event listeners a los botones después de crearlos
+    document.querySelectorAll('.view-details').forEach(button => {
+        button.addEventListener('click', function() {
+            const project = projects[this.getAttribute('data-index')];
+            openProjectModal(project);
         });
     });
-});
+}
