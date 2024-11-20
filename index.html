@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav role="navigation" aria-label="Navegación principal">
-            <h1>Mi portafolio</h1>
+            <h1>Mi Portfolio</h1>
             <button class="hamburger" aria-label="Abrir menú">
                 <span></span>
                 <span></span>
@@ -263,16 +263,17 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2 id="modalTitle"></h2>
-            <div class="image-carousel">
-                <div class="carousel-images" id="carouselImages"></div>
-                <button class="carousel-button prev">&lt;</button>
-                <button class="carousel-button next">&gt;</button>
-            </div>
             <p id="modalDescription"></p>
-            <div id="modalTechTags" class="tech-tags"></div>
+            <div id="modalTechTags"></div>
+            <p id="modalImpact"></p>
+            <p id="modalChallenges"></p>
+            <p id="modalSolution"></p>
+            <div id="carouselImages" class="carousel"></div>
+            <button class="carousel-button prev">Anterior</button>
+            <button class="carousel-button next">Siguiente</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

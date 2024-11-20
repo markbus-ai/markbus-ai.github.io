@@ -18,14 +18,17 @@ const projects = [
     {
         title: "Chatbot con API de Gemini",
         description: "Un asistente de conversación AI utilizando la API de Gemini para conversaciones naturales.",
-        details: "El Chatbot con API de Gemini es un asistente de conversación AI avanzado que puede mantener conversaciones en lenguaje natural, crear y ejecutar código y crear gráficos entre otras cosas. Utiliza la API de Gemini para entender y responder a preguntas, proporcionar información y ayudar con tareas variadas.",
+        details: "El Chatbot con API de Gemini es un asistente de conversación AI avanzado que puede mantener conversaciones en lenguaje natural, crear y ejecutar código, y generar gráficos a partir de datos que reciba. Es capaz de ejecutar el código y generarlo en un archivo listo para su uso. Utiliza la API de Gemini para entender y responder a preguntas, proporcionar información y ayudar con tareas variadas.",
         images: [
-            "img/gemini1.png",
             "img/gemini2.png",
+            "img/gemini1.png",
             "img/gemini3.png"
         ],
         tech: ["CustomTkinter", "Python", "Gemini API"],
-        link: "https://github.com/markbus-ai/Gemini-desktop"
+        link: "https://github.com/markbus-ai/Gemini-desktop",
+        impact: "Mejoró la interacción con usuarios en un 30%",
+        challenges: "Implementación de gráficos a partir de lenguaje natural",
+        solution: "Utilización de Gemini para obtener datos numéricos y visualizarlos con Matplotlib"
     },
     {
         title: "Sitio Web de Bolsa de Trabajo",
@@ -37,7 +40,10 @@ const projects = [
             "img/bolsa3.png"
         ],
         tech: ["JavaScript","Html","Css","Flask","SQlite"],
-        link: "http://bolsa.onrender.com/"
+        link: "http://bolsa.onrender.com/",
+        impact: "Facilitó la conexión entre empleadores y candidatos en un 50%",
+        challenges: "Creación de un sistema de búsqueda y filtrado eficiente",
+        solution: "Implementación de algoritmos de búsqueda optimizados y filtros personalizados"
     }
 ];
 
@@ -110,11 +116,71 @@ function createProjectCards() {
             openProjectModal(project);
         });
     });
-    // Agregar event listeners a los botones después de crearlos
-    document.querySelectorAll('.view-details').forEach(button => {
-        button.addEventListener('click', function() {
-            const project = projects[this.getAttribute('data-index')];
-            openProjectModal(project);
-        });
-    });
 }
+
+function openProjectModal(project) {
+    modal.innerHTML = `
+        <div class="modal-content">
+            <button class="close">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-carousel" id="carouselImages">
+                    <div class="carousel-container">
+                        ${project.images.map((image, index) => `
+                            <div class="carousel-slide" style="display: ${index === 0 ? 'block' : 'none'}">
+                                <img src="${image}" alt="${project.title} imagen ${index + 1}">
+                            </div>
+                        `).join('')}
+                    </div>
+                    <button class="carousel-button prev">&#10094;</button>
+                    <button class="carousel-button next">&#10095;</button>
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle">${project.title}</h2>
+                    <div id="modalDescription">${project.details}</div>
+                    <div id="modalTechTags">
+                        ${project.tech.map(tag => `<span class="tech-tag">${tag}</span>`).join('')}
+                    </div>
+                    <div class="modal-details">
+                        <div id="modalImpact"><strong>Impacto:</strong> ${project.impact || 'N/A'}</div>
+                        <div id="modalChallenges"><strong>Desafíos:</strong> ${project.challenges || 'N/A'}</div>
+                        <div id="modalSolution"><strong>Solución:</strong> ${project.solution || 'N/A'}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    currentSlide = 0;
+    modal.style.display = 'block';
+    
+    const closeBtn = modal.querySelector('.close');
+    const prevBtn = modal.querySelector('.carousel-button.prev');
+    const nextBtn = modal.querySelector('.carousel-button.next');
+    
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    prevBtn.addEventListener('click', () => navigateCarousel('prev'));
+    nextBtn.addEventListener('click', () => navigateCarousel('next'));
+}
+
+function navigateCarousel(direction) {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const container = document.querySelector('.carousel-container');
+    
+    if (slides.length === 0) return;
+    
+    // Actualizar el índice actual
+    if (direction === 'next') {
+        currentSlide = (currentSlide + 1) % slides.length;
+    } else {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    }
+    
+    // Ocultar todas las slides
+    slides.forEach(slide => {
+        slide.style.display = 'none';
+    });
+    
+    // Mostrar solo la slide actual
+    slides[currentSlide].style.display = 'block';
+}
+

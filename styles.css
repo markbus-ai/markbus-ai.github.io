@@ -254,7 +254,7 @@
 
         .project-card img {
             width: 100%;
-            height: 200px;
+            height: 280px;
             object-fit: cover;
         }
 
@@ -368,46 +368,248 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            overflow-y: auto;
+            padding: 2rem 1rem;
         }
 
         .modal-content {
-            background: rgba(30, 41, 59, 0.95);
-            backdrop-filter: blur(20px);
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            max-width: 800px;
-            width: 90%;
-            margin: 2rem auto;
+            border-radius: 24px;
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
             position: relative;
-            transform: translateY(20px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-grid {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        /* Carrusel */
+        .modal-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .carousel-container {
+            width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide {
+            width: 100%;
+            display: none; /* Todas las slides empiezan ocultas */
+        }
+
+        .carousel-slide.active {
+            display: block; /* Solo la slide activa se muestra */
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .carousel-button.prev {
+            left: 0;
+        }
+
+        .carousel-button.next {
+            right: 0;
+        }
+
+        /* Información */
+        .modal-info {
+            padding: 0 1rem;
+        }
+
+        #modalTitle {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        #modalDescription {
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        #modalTechTags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        #modalImpact,
+        #modalChallenges,
+        #modalSolution {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            color: var(--text);
+        }
+
+        /* Botones del carrusel */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 100;
+            backdrop-filter: blur(4px);
             opacity: 0;
-            animation: modalFadeIn 0.3s ease forwards;
         }
 
-        @keyframes modalFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Animación de entrada de los botones */
+        .modal-carousel:hover .carousel-button {
+            opacity: 1;
         }
 
+        .carousel-button:hover {
+            background: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+        }
+
+        .carousel-button:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .carousel-button.prev {
+            left: -50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), left 0.3s ease;
+        }
+
+        .carousel-button.next {
+            right: -50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), right 0.3s ease;
+        }
+
+        /* Animación de entrada de los botones al hover */
+        .modal-carousel:hover .carousel-button.prev {
+            left: 20px;
+        }
+
+        .modal-carousel:hover .carousel-button.next {
+            right: 20px;
+        }
+
+        /* Animación del contenedor del carrusel */
+        .modal-carousel {
+            transition: transform 0.3s ease;
+        }
+
+        .modal-carousel:hover {
+            transform: scale(1.01);
+        }
+
+        /* Botón de cerrar */
         .close {
             position: absolute;
             right: 1.5rem;
-            top: 1rem;
-            color: var(--text-secondary);
-            font-size: 2rem;
-            font-weight: bold;
+            top: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            z-index: 101;
         }
 
         .close:hover {
-            color: var(--text);
+            background: rgba(255, 0, 0, 0.2);
+            transform: rotate(90deg);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .modal {
+                padding: 1rem;
+            }
+            
+            .modal-carousel {
+                height: 400px;
+            }
+            
+            #modalTitle {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-carousel {
+                height: 300px;
+            }
+            
+            .modal-grid {
+                padding: 1rem;
+            }
+            
+            #modalTitle {
+                font-size: 1.75rem;
+            }
+            
+            .modal-info {
+                padding: 0;
+            }
+            
+            .carousel-button {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
         }
 
         /* Image carousel */
@@ -1321,5 +1523,86 @@ img {
 
     nav a:hover {
         background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Actualizar estilos de los botones del carrusel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: rgba(37, 99, 235, 0.2);
+    backdrop-filter: blur(4px);
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background: var(--primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-button.prev {
+    left: 20px;
+}
+
+.carousel-button.next {
+    right: 20px;
+}
+
+/* Ajustar el contenedor del carrusel y la información */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#carouselImages {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Asegurar que la solución esté por debajo de los botones */
+#modalSolution {
+    position: relative;
+    z-index: 1;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .carousel-button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    #carouselImages {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-button {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    #carouselImages {
+        height: 250px;
     }
 }
