@@ -1,5 +1,19 @@
 // Project data
 const projects = [
+
+    {
+        title: "Web de chat en live",
+        description: "Un sistema de chat dentro de una pagina web.",
+        details: "La Web de chat en vivo es una plataforma que permite a los usuarios comunicarse entre ellos en tiempo real, enviando mensajes y recibiendo respuestas instantáneas implementado con websocket en python y FastApi para el backend y html, css y javascript para el frontend.",
+        images: [
+            "img/chat1.png",
+            "img/chat2.png"
+        ],
+        tech: ["Python", "Sqlite", "FastApi", "Html", "Css", "Javascript"],
+        link: "https://chat-web-407k.onrender.com/",
+        challenges: "implementación de un chat en tiempo real y sin contraseñas",
+        solution: "Utilización de WebSockets para actualizaciones instantáneas y SQLite para gestión de datos local"
+    },
     {
         title: "Sistema de Pedidos de Restaurante",
         description: "Un sistema de gestión de pedidos para restaurantes.",
@@ -44,7 +58,21 @@ const projects = [
         impact: "Facilitó la conexión entre empleadores y candidatos en un 50%",
         challenges: "Creación de un sistema de búsqueda y filtrado eficiente",
         solution: "Implementación de algoritmos de búsqueda optimizados y filtros personalizados"
-    }
+    },
+    {
+        title: "PIP manager gui",
+        description: "implementación de una interfaz gráfica para el gestor de paquetes de python pip.",
+        details: "Este es un proyecto desarrollado en Python con una interfaz gráfica utilizando customtkinter. El programa permite gestionar librerías de Python instaladas con pip de manera sencilla, ofreciendo funcionalidades como instalación, desinstalación, actualización, búsqueda y más.",
+        images: [
+            "img/pip1.png",
+            "img/pip2.png",
+            "img/pip3.png"
+        ],
+        tech: ["Python", "Customtkinter"],
+        link: "https://github.com/markbus-ai/gestor-de-paquetes",
+        challenges: "implementación de una interfaz gráfica para un programa de consola",
+        solution: "Utilización de customtkinter para la interfaz gráfica"
+    },
 ];
 
 // DOM Elements
