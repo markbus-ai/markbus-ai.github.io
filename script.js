@@ -2,19 +2,6 @@
 const projects = [
 
     {
-        title: "Web de chat en live",
-        description: "Un sistema de chat dentro de una pagina web.",
-        details: "La Web de chat en vivo es una plataforma que permite a los usuarios comunicarse entre ellos en tiempo real, enviando mensajes y recibiendo respuestas instantáneas implementado con websocket en python y FastApi para el backend y html, css y javascript para el frontend.",
-        images: [
-            "img/chat1.png",
-            "img/chat2.png"
-        ],
-        tech: ["Python", "Sqlite", "FastApi", "Html", "Css", "Javascript"],
-        link: "https://chat-web-407k.onrender.com/",
-        challenges: "implementación de un chat en tiempo real y sin contraseñas",
-        solution: "Utilización de WebSockets para actualizaciones instantáneas y SQLite para gestión de datos local"
-    },
-    {
         title: "Sistema de Pedidos de Restaurante",
         description: "Un sistema de gestión de pedidos para restaurantes.",
         details: "El Sistema de Pedidos de Restaurante donde los mozos con su propio celular pueden logearse y cargar los datos de cada mesa que abran, siendo comunicados esos datos a un programa de pc central que recibe los pedidos y brinda una vista de cada mesa y resumen de cada mozo viendo el rendimiento en tiempo real además de una gestión de menú y mozos completa.",
