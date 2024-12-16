@@ -41,7 +41,7 @@ const projects = [
             "img/bolsa3.png"
         ],
         tech: ["JavaScript","Html","Css","Flask","SQlite"],
-        link: "http://bolsa.onrender.com/",
+        link: "https://bolsa-gokd.onrender.com",
         impact: "Facilitó la conexión entre empleadores y candidatos en un 50%",
         challenges: "Creación de un sistema de búsqueda y filtrado eficiente",
         solution: "Implementación de algoritmos de búsqueda optimizados y filtros personalizados"
