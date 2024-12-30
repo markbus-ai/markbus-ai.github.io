@@ -1,5 +1,20 @@
 // Project data
 const projects = [
+    {
+    "title": "Acortador de URLs",
+    "description": "Un sistema fácil de usar que convierte URLs largas en versiones cortas y compartibles.",
+    "details": "El Acortador de URLs permite a los usuarios ingresar una URL larga y obtener una versión más corta que se puede compartir fácilmente. El sistema utiliza un algoritmo de hash para generar enlaces únicos y seguros. Cada URL acortada se guarda en una base de datos para su redirección cuando se accede a la versión corta.",
+    "images": [
+        "img/url1.png",
+        "img/url2.png"
+    ],
+    "tech": ["Flask", "SQLite", "Python", "Base62"],
+    "link": "https://markbustos.pythonanywhere.com/",
+    "impact": "Facilitó el compartir enlaces largos, mejorando la experiencia de usuario en plataformas con restricciones de caracteres.",
+    "challenges": "Manejo de URLs duplicadas y asegurarse de que cada URL acortada sea única.",
+    "solution": "Implementación de un algoritmo de hash y almacenamiento en una base de datos SQLite para garantizar la unicidad y evitar colisiones."
+    },
+
 
     {
         title: "Sistema de Pedidos de Restaurante",
@@ -11,11 +26,13 @@ const projects = [
             "img/comanda3.png",
             "img/comanda4.png"
         ],
+        
         tech: ["Python", "Sqlite", "Pyqt5", "FastApi", "Flutter"],
         impact: "Aumentó la eficiencia en la gestión de pedidos en un 40%",
         challenges: "Implementación de sincronización en tiempo real entre dispositivos móviles y sistema central",
         solution: "Utilización de WebSockets para actualizaciones instantáneas y SQLite para gestión de datos local"
     },
+    
     {
         title: "Chatbot con API de Gemini",
         description: "Un asistente de conversación AI utilizando la API de Gemini para conversaciones naturales.",
