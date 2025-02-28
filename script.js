@@ -1,6 +1,20 @@
 // Project data
 const projects = [
     {
+    "title": "OpinionScope",
+    "description": "Una aplicación web para análisis de sentimientos y procesamiento de opiniones en múltiples fuentes",
+    "details": "OpinionScope es una herramienta de análisis que recopila y procesa opiniones de Reddit, Google News y otras fuentes web. Utiliza técnicas de procesamiento de lenguaje natural para realizar análisis de sentimientos y generar informes detallados. La aplicación está construida con Flask y proporciona una interfaz web intuitiva para visualizar los resultados.",
+    "images": [
+        "img/opinion1.png",
+        "img/opinion2.png",
+        "img/opinion3.png"
+    ],
+    "tech": ["Python", "Flask", "NLP", "Web Scraping"],
+    "link": "https://markbustos.pythonanywhere.com/011be3",
+    "challenges": "Integración de múltiples fuentes de datos y procesamiento de texto en diferentes formatos",
+    "solution": "Implementación de una arquitectura modular con procesadores específicos para cada fuente de datos"
+    },
+    {
     "title": "Acortador de URLs",
     "description": "Un sistema fácil de usar que convierte URLs largas en versiones cortas y compartibles.",
     "details": "El Acortador de URLs permite a los usuarios ingresar una URL larga y obtener una versión más corta que se puede compartir fácilmente. El sistema utiliza un algoritmo de hash para generar enlaces únicos y seguros. Cada URL acortada se guarda en una base de datos para su redirección cuando se accede a la versión corta.",
@@ -77,6 +91,21 @@ const projects = [
         challenges: "implementación de una interfaz gráfica para un programa de consola",
         solution: "Utilización de customtkinter para la interfaz gráfica"
     },
+    {
+        "title": "ARG - Juego de Investigación Digital",
+        "description": "Una experiencia interactiva de investigación digital que combina narrativa inmersiva con puzzles técnicos",
+        "details": "Juego de investigación basado en texto que sigue la misteriosa historia del Dr. Elian Valtor y un evento borrado de 1976. Implementado con Python y el framework Textual, presenta una interfaz retro tipo terminal que permite a los usuarios explorar archivos, descifrar códigos y resolver puzzles. El sistema incluye navegación entre ubicaciones, manejo de archivos cifrados, sistema de pistas progresivas y verificación de soluciones en tiempo real.",
+        "images": [
+            "img/arg1.png",
+            "img/arg2.png",
+            "img/arg3.png"
+        ],
+        "tech": ["Python", "Textual", "Rich", "Asyncio"],
+        "link": "https://github.com/markbus-ai/ARG",
+        "impact": "Creación de una experiencia inmersiva que combina aprendizaje técnico con narrativa envolvente",
+        "challenges": "Desarrollo de un sistema de progresión no lineal que mantuviera la coherencia narrativa mientras permitía múltiples rutas de resolución",
+        "solution": "Implementación de una arquitectura modular con sistema de estados flexible, manejo avanzado de archivos y verificación dinámica de soluciones"
+    }
 ];
 
 // DOM Elements
