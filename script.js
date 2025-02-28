@@ -97,8 +97,7 @@ const projects = [
         "details": "Juego de investigación basado en texto que sigue la misteriosa historia del Dr. Elian Valtor y un evento borrado de 1976. Implementado con Python y el framework Textual, presenta una interfaz retro tipo terminal que permite a los usuarios explorar archivos, descifrar códigos y resolver puzzles. El sistema incluye navegación entre ubicaciones, manejo de archivos cifrados, sistema de pistas progresivas y verificación de soluciones en tiempo real.",
         "images": [
             "img/arg1.png",
-            "img/arg2.png",
-            "img/arg3.png"
+            "img/arg2.png"
         ],
         "tech": ["Python", "Textual", "Rich", "Asyncio"],
         "link": "https://github.com/markbus-ai/ARG",
