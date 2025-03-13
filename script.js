@@ -10,7 +10,7 @@ const projects = [
         "img/opinion3.png"
     ],
     "tech": ["Python", "Flask", "NLP", "Web Scraping"],
-    "link": "https://markbustos.pythonanywhere.com/011be3",
+    "link": "https://markbustos.pythonanywhere.com/c0951c",
     "challenges": "Integración de múltiples fuentes de datos y procesamiento de texto en diferentes formatos",
     "solution": "Implementación de una arquitectura modular con procesadores específicos para cada fuente de datos"
     },
