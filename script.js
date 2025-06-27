@@ -1,111 +1,103 @@
 // Project data
 const projects = [
-    {
-    "title": "OpinionScope",
-    "description": "Una aplicación web para análisis de sentimientos y procesamiento de opiniones en múltiples fuentes",
-    "details": "OpinionScope es una herramienta de análisis que recopila y procesa opiniones de Reddit, Google News y otras fuentes web. Utiliza técnicas de procesamiento de lenguaje natural para realizar análisis de sentimientos y generar informes detallados. La aplicación está construida con Flask y proporciona una interfaz web intuitiva para visualizar los resultados.",
-    "images": [
-        "img/opinion1.png",
-        "img/opinion2.png",
-        "img/opinion3.png"
-    ],
-    "tech": ["Python", "Flask", "NLP", "Web Scraping"],
-    "link": "https://markbustos.pythonanywhere.com/c0951c",
-    "challenges": "Integración de múltiples fuentes de datos y procesamiento de texto en diferentes formatos",
-    "solution": "Implementación de una arquitectura modular con procesadores específicos para cada fuente de datos"
-    },
-    {
-    "title": "Acortador de URLs",
-    "description": "Un sistema fácil de usar que convierte URLs largas en versiones cortas y compartibles.",
-    "details": "El Acortador de URLs permite a los usuarios ingresar una URL larga y obtener una versión más corta que se puede compartir fácilmente. El sistema utiliza un algoritmo de hash para generar enlaces únicos y seguros. Cada URL acortada se guarda en una base de datos para su redirección cuando se accede a la versión corta.",
-    "images": [
-        "img/url1.png",
-        "img/url2.png"
-    ],
-    "tech": ["Flask", "SQLite", "Python", "Base62"],
-    "link": "https://markbustos.pythonanywhere.com/",
-    "impact": "Facilitó el compartir enlaces largos, mejorando la experiencia de usuario en plataformas con restricciones de caracteres.",
-    "challenges": "Manejo de URLs duplicadas y asegurarse de que cada URL acortada sea única.",
-    "solution": "Implementación de un algoritmo de hash y almacenamiento en una base de datos SQLite para garantizar la unicidad y evitar colisiones."
-    },
-
-
-    {
-        title: "Sistema de Pedidos de Restaurante",
-        description: "Un sistema de gestión de pedidos para restaurantes.",
-        details: "El Sistema de Pedidos de Restaurante donde los mozos con su propio celular pueden logearse y cargar los datos de cada mesa que abran, siendo comunicados esos datos a un programa de pc central que recibe los pedidos y brinda una vista de cada mesa y resumen de cada mozo viendo el rendimiento en tiempo real además de una gestión de menú y mozos completa.",
-        images: [
-            "img/comanda1.png",
-            "img/comanda2.png",
-            "img/comanda3.png",
-            "img/comanda4.png"
-        ],
-        
-        tech: ["Python", "Sqlite", "Pyqt5", "FastApi", "Flutter"],
-        impact: "Aumentó la eficiencia en la gestión de pedidos en un 40%",
-        challenges: "Implementación de sincronización en tiempo real entre dispositivos móviles y sistema central",
-        solution: "Utilización de WebSockets para actualizaciones instantáneas y SQLite para gestión de datos local"
-    },
-    
-    {
-        title: "Chatbot con API de Gemini",
-        description: "Un asistente de conversación AI utilizando la API de Gemini para conversaciones naturales.",
-        details: "El Chatbot con API de Gemini es un asistente de conversación AI avanzado que puede mantener conversaciones en lenguaje natural, crear y ejecutar código, y generar gráficos a partir de datos que reciba. Es capaz de ejecutar el código y generarlo en un archivo listo para su uso. Utiliza la API de Gemini para entender y responder a preguntas, proporcionar información y ayudar con tareas variadas.",
-        images: [
-            "img/gemini2.png",
-            "img/gemini1.png",
-            "img/gemini3.png"
-        ],
-        tech: ["CustomTkinter", "Python", "Gemini API"],
-        link: "https://github.com/markbus-ai/Gemini-desktop",
-        impact: "Mejoró la interacción con usuarios en un 30%",
-        challenges: "Implementación de gráficos a partir de lenguaje natural",
-        solution: "Utilización de Gemini para obtener datos numéricos y visualizarlos con Matplotlib"
-    },
-    {
-        title: "Sitio Web de Bolsa de Trabajo",
-        description: "Una plataforma que conecta a los buscadores de empleo con los empleadores para el centro de formación 403",
-        details: "El Sitio Web de Bolsa de Trabajo es una plataforma integral donde se publican los perfiles profesionales de los alumnos certificados por el centro de formación 403",
-        images: [
-            "img/bolsa1.png",
-            "img/bolsa2.png",
-            "img/bolsa3.png"
-        ],
-        tech: ["JavaScript","Html","Css","Flask","SQlite"],
-        link: "https://bolsa-gokd.onrender.com",
-        impact: "Facilitó la conexión entre empleadores y candidatos en un 50%",
-        challenges: "Creación de un sistema de búsqueda y filtrado eficiente",
-        solution: "Implementación de algoritmos de búsqueda optimizados y filtros personalizados"
-    },
-    {
-        title: "PIP manager gui",
-        description: "implementación de una interfaz gráfica para el gestor de paquetes de python pip.",
-        details: "Este es un proyecto desarrollado en Python con una interfaz gráfica utilizando customtkinter. El programa permite gestionar librerías de Python instaladas con pip de manera sencilla, ofreciendo funcionalidades como instalación, desinstalación, actualización, búsqueda y más.",
-        images: [
-            "img/pip1.png",
-            "img/pip2.png",
-            "img/pip3.png"
-        ],
-        tech: ["Python", "Customtkinter"],
-        link: "https://github.com/markbus-ai/gestor-de-paquetes",
-        challenges: "implementación de una interfaz gráfica para un programa de consola",
-        solution: "Utilización de customtkinter para la interfaz gráfica"
-    },
-    {
-        "title": "ARG - Juego de Investigación Digital",
-        "description": "Una experiencia interactiva de investigación digital que combina narrativa inmersiva con puzzles técnicos",
-        "details": "Juego de investigación basado en texto que sigue la misteriosa historia del Dr. Elian Valtor y un evento borrado de 1976. Implementado con Python y el framework Textual, presenta una interfaz retro tipo terminal que permite a los usuarios explorar archivos, descifrar códigos y resolver puzzles. El sistema incluye navegación entre ubicaciones, manejo de archivos cifrados, sistema de pistas progresivas y verificación de soluciones en tiempo real.",
-        "images": [
-            "img/arg1.png",
-            "img/arg2.png"
-        ],
-        "tech": ["Python", "Textual", "Rich", "Asyncio"],
-        "link": "https://github.com/markbus-ai/ARG",
-        "impact": "Creación de una experiencia inmersiva que combina aprendizaje técnico con narrativa envolvente",
-        "challenges": "Desarrollo de un sistema de progresión no lineal que mantuviera la coherencia narrativa mientras permitía múltiples rutas de resolución",
-        "solution": "Implementación de una arquitectura modular con sistema de estados flexible, manejo avanzado de archivos y verificación dinámica de soluciones"
-    }
+  {
+    title: "Sitio Web para Coach Emocional",
+    description: "Página profesional para un servicio de coaching ontológico emocional y saludable",
+    details: "Desarrollada para una clienta real, esta web presenta sus servicios de acompañamiento emocional, agenda de sesiones, testimonios y contacto directo. El diseño es limpio, accesible desde móviles y optimizado para transmitir confianza. Está alojada en un servidor propio, protegido por Cloudflare, y vinculada con redes sociales y WhatsApp.",
+    images: ["img/coach1.png", "img/coach2.png", "img/coach3.png"],
+    tech: ["HTML", "CSS", "JavaScript", "Servidor Propio", "Cloudflare"],
+    link: "https://coachemocionalmentesaludable.site",
+    impact: "Ayudó a profesionalizar la presencia online del servicio de coaching, facilitando la comunicación con clientes potenciales",
+    challenges: "Diseñar un sitio profesional, accesible y optimizado para contacto directo en un entorno autogestionado",
+    solution: "Desarrollo personalizado, con enfoque en UX/UI, despliegue en servidor propio y uso de Cloudflare para seguridad y rendimiento"
+  },
+  {
+    title: "Sistema de Pedidos de Restaurante",
+    description: "Un sistema de gestión de pedidos para restaurantes.",
+    details: "Permite a los mozos cargar pedidos desde el celular, conectándose con una app central en PC para visualizar las mesas, el rendimiento en tiempo real y administrar menús y mozos. Ideal para optimizar el trabajo en el salón.",
+    images: ["img/comanda1.png", "img/comanda2.png", "img/comanda3.png", "img/comanda4.png"],
+    tech: ["Python", "Sqlite", "Pyqt5", "FastApi", "Flutter"],
+    impact: "Aumentó la eficiencia en la gestión de pedidos en un 40%",
+    challenges: "Implementación de sincronización en tiempo real entre dispositivos móviles y sistema central",
+    solution: "Utilización de WebSockets para actualizaciones instantáneas y SQLite para gestión de datos local"
+  },
+  {
+    title: "WhatsApp Web Wrapper",
+    description: "Una librería open source para automatizar WhatsApp Web usando Playwright",
+    details: "Permite iniciar sesión, detectar el estado del QR, acceder a chats y mensajes, y enviar contenido de manera programática. Ideal para bots educativos, automatización o soporte técnico.",
+    images: ["img/wsp1.png"],
+    tech: ["Python", "Playwright", "Asyncio", "XPath"],
+    link: "https://github.com/markbus-ai/whatsplay",
+    impact: "Utilizado para crear bots y automatizaciones sobre WhatsApp Web, reduciendo tareas manuales",
+    challenges: "Manejo del estado de sesión, detección de QR y control dinámico de elementos UI",
+    solution: "Uso avanzado de Playwright y XPath para interactuar con la interfaz de WhatsApp Web"
+  },
+  {
+    title: "OpinionScope",
+    description: "Una aplicación web para análisis de sentimientos y procesamiento de opiniones en múltiples fuentes",
+    details: "Recopila opiniones de Reddit, Google News y otras fuentes usando NLP para analizar sentimientos. Brinda informes visuales desde una interfaz web.",
+    images: ["img/opinion1.png", "img/opinion2.png", "img/opinion3.png"],
+    tech: ["Python", "Flask", "NLP", "Web Scraping"],
+    link: "https://markbustos.pythonanywhere.com/c0951c",
+    challenges: "Integración de múltiples fuentes de datos y procesamiento de texto en diferentes formatos",
+    solution: "Implementación de una arquitectura modular con procesadores específicos para cada fuente de datos"
+  },
+  {
+    title: "ARG - Juego de Investigación Digital",
+    description: "Una experiencia interactiva de investigación digital que combina narrativa inmersiva con puzzles técnicos",
+    details: "Juego tipo terminal que sigue la historia del Dr. Elian Valtor. El usuario navega archivos, descifra códigos y resuelve acertijos. Modular, retro y educativo.",
+    images: ["img/arg1.png", "img/arg2.png"],
+    tech: ["Python", "Textual", "Rich", "Asyncio"],
+    link: "https://github.com/markbus-ai/ARG",
+    impact: "Combina aprendizaje técnico con narrativa inmersiva",
+    challenges: "Sistema no lineal con progresión coherente",
+    solution: "Arquitectura modular con manejo avanzado de archivos y verificación dinámica de soluciones"
+  },
+  {
+    title: "Chatbot con API de Gemini",
+    description: "Un asistente de conversación AI utilizando la API de Gemini para conversaciones naturales.",
+    details: "Mantiene conversaciones naturales, crea/ejecuta código y genera gráficos a partir de instrucciones. Ideal como asistente técnico o educativo.",
+    images: ["img/gemini2.png", "img/gemini1.png", "img/gemini3.png"],
+    tech: ["CustomTkinter", "Python", "Gemini API"],
+    link: "https://github.com/markbus-ai/Gemini-desktop",
+    impact: "Mejoró la interacción con usuarios en un 30%",
+    challenges: "Implementación de gráficos a partir de lenguaje natural",
+    solution: "Utilización de Gemini para obtener datos numéricos y visualizarlos con Matplotlib"
+  },
+  {
+    title: "Sitio Web de Bolsa de Trabajo",
+    description: "Una plataforma que conecta a los buscadores de empleo con los empleadores para el centro de formación 403",
+    details: "Publica perfiles profesionales de alumnos certificados. Incluye búsqueda y filtros personalizados.",
+    images: ["img/bolsa1.png", "img/bolsa2.png", "img/bolsa3.png"],
+    tech: ["JavaScript", "HTML", "CSS", "Flask", "SQLite"],
+    link: "https://bolsa-gokd.onrender.com",
+    impact: "Facilitó la conexión entre empleadores y candidatos en un 50%",
+    challenges: "Sistema de búsqueda y filtrado eficiente",
+    solution: "Algoritmos de búsqueda optimizados y filtros personalizados"
+  },
+  {
+    title: "PIP Manager GUI",
+    description: "Interfaz gráfica para gestionar paquetes de Python con pip",
+    details: "Permite buscar, instalar, desinstalar y actualizar librerías de forma visual desde una GUI moderna con CustomTkinter.",
+    images: ["img/pip1.png", "img/pip2.png", "img/pip3.png"],
+    tech: ["Python", "CustomTkinter"],
+    link: "https://github.com/markbus-ai/gestor-de-paquetes",
+    challenges: "Crear una GUI funcional para una herramienta común de consola",
+    solution: "Uso de CustomTkinter para la interfaz"
+  },
+  {
+    title: "Acortador de URLs",
+    description: "Un sistema fácil de usar que convierte URLs largas en versiones cortas y compartibles.",
+    details: "Genera versiones únicas y seguras de URLs mediante un algoritmo de hash, con redirección automática.",
+    images: ["img/url1.png", "img/url2.png"],
+    tech: ["Flask", "SQLite", "Python", "Base62"],
+    link: "https://markbustos.pythonanywhere.com/",
+    impact: "Facilitó compartir enlaces largos en plataformas con restricciones de caracteres",
+    challenges: "Evitar colisiones y manejar URLs duplicadas",
+    solution: "Algoritmo de hash + almacenamiento seguro en SQLite"
+  }
 ];
+
 
 // DOM Elements
 const projectGrid = document.getElementById('projectGrid');
