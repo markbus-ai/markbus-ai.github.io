@@ -38,7 +38,7 @@ const projects = [
     details: "Recopila opiniones de Reddit, Google News y otras fuentes usando NLP para analizar sentimientos. Brinda informes visuales desde una interfaz web.",
     images: ["img/opinion1.png", "img/opinion2.png", "img/opinion3.png"],
     tech: ["Python", "Flask", "NLP", "Web Scraping"],
-    link: "https://markbustos.pythonanywhere.com/c0951c",
+    link: "https://markbustos.pythonanywhere.com/5d11f6",
     challenges: "Integración de múltiples fuentes de datos y procesamiento de texto en diferentes formatos",
     solution: "Implementación de una arquitectura modular con procesadores específicos para cada fuente de datos"
   },
@@ -91,7 +91,7 @@ const projects = [
     details: "Genera versiones únicas y seguras de URLs mediante un algoritmo de hash, con redirección automática.",
     images: ["img/url1.png", "img/url2.png"],
     tech: ["Flask", "SQLite", "Python", "Base62"],
-    link: "https://markbustos.pythonanywhere.com/",
+    link: "https://xyz-eexc.onrender.com/",
     impact: "Facilitó compartir enlaces largos en plataformas con restricciones de caracteres",
     challenges: "Evitar colisiones y manejar URLs duplicadas",
     solution: "Algoritmo de hash + almacenamiento seguro en SQLite"
