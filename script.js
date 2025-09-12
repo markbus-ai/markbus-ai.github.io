@@ -1,6 +1,17 @@
 // Project data
 const projects = [
   {
+  title: "Bot de WhatsApp para Bicicletería Amigorena",
+  description: "Un bot automatizado de WhatsApp para responder consultas y gestionar la comunicación con clientes",
+  details: "Desarrollado a medida para una bicicletería, este bot responde automáticamente a consultas sobre productos, repuestos, taller y horarios. Incluye lógica de respuestas múltiples, mensajes diferenciados según palabras clave, manejo de doble mensaje y envío de audios o imágenes. Está construido sobre mi librería open source WhatsPlay, que automatiza WhatsApp Web con Playwright.",
+  images: ["img/wsp1.png"],
+  tech: ["Python", "Playwright", "WhatsPlay", "Asyncio"],
+  impact: "Mejoró la atención al cliente al reducir tiempos de respuesta y permitió a la bicicletería mantener comunicación constante incluso fuera del horario de atención",
+  challenges: "Diseñar un sistema flexible de respuestas que abarque distintos productos, servicios y consultas sin perder naturalidad",
+  solution: "Implementación de un bot modular con detección de palabras clave, lógica de flujos de conversación y soporte multimedia"
+},
+
+  {
     title: "Sitio Web para Coach Emocional",
     description: "Página profesional para un servicio de coaching ontológico emocional y saludable",
     details: "Desarrollada para una clienta real, esta web presenta sus servicios de acompañamiento emocional, agenda de sesiones, testimonios y contacto directo. El diseño es limpio, accesible desde móviles y optimizado para transmitir confianza. Está alojada en un servidor propio, protegido por Cloudflare, y vinculada con redes sociales y WhatsApp.",
