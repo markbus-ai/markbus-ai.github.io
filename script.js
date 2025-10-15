@@ -38,6 +38,7 @@ const projects = [
     details: "Sitio web desarrollado para concientizar sobre el cierre del centro comunitario desde junio 2025 y recolectar firmas digitales para su reapertura. El centro fue cerrado tras hechos de violencia e inseguridad que pusieron en riesgo a jóvenes y educadores. La página incluye formulario de firma, contador de firmas en tiempo real, información sobre el contexto y llamado a la acción para compartir en redes sociales.",
     images: ["img/envion1.png", "img/envion2.png", "img/envion3.png"],
     tech: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    link: "https://markbus-ai.github.io/envion/",
     impact: "Plataforma para movilización comunitaria y recolección de firmas para causa social",
     challenges: "Crear una experiencia web emotiva y convincente que motive a los visitantes a firmar y compartir la petición",
     solution: "Diseño limpio y directo al punto, con mensaje claro sobre la problemática, formulario simple de firma y botones de compartir en redes sociales para maximizar el alcance"
