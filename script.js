@@ -32,6 +32,16 @@ const projects = [
     challenges: "Implementación de sincronización en tiempo real entre dispositivos móviles y sistema central",
     solution: "Utilización de WebSockets para actualizaciones instantáneas y SQLite para gestión de datos local"
   },
+    {
+    title: "Salvemos el Envión Puerto - Sitio de Petición",
+    description: "Landing page para campaña de firma de petición online para la reapertura del Centro Comunitario Envión Puerto de Mar del Plata.",
+    details: "Sitio web desarrollado para concientizar sobre el cierre del centro comunitario desde junio 2025 y recolectar firmas digitales para su reapertura. El centro fue cerrado tras hechos de violencia e inseguridad que pusieron en riesgo a jóvenes y educadores. La página incluye formulario de firma, contador de firmas en tiempo real, información sobre el contexto y llamado a la acción para compartir en redes sociales.",
+    images: ["img/envion1.png", "img/envion2.png", "img/envion3.png"],
+    tech: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    impact: "Plataforma para movilización comunitaria y recolección de firmas para causa social",
+    challenges: "Crear una experiencia web emotiva y convincente que motive a los visitantes a firmar y compartir la petición",
+    solution: "Diseño limpio y directo al punto, con mensaje claro sobre la problemática, formulario simple de firma y botones de compartir en redes sociales para maximizar el alcance"
+    },
   {
     title: "WhatsApp Web Wrapper",
     description: "Una librería open source para automatizar WhatsApp Web usando Playwright",
