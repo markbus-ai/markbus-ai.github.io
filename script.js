@@ -1,6 +1,17 @@
 // Project data
 const projects = [
   {
+    title: "Notas - Editor de Texto GTK4",
+    description: "Editor de texto minimalista escrito en Python usando GTK4 nativo para tomar notas rápidas con características esenciales.",
+    details: "Desarrollado como un editor de texto simple para notas, con funcionalidades como búsqueda, corrección ortográfica, vista previa de Markdown, autosave, tema oscuro/claro, y más. Arquitectura modular con integración nativa en Linux.",
+    images: ["img/arg1.png"],
+    tech: ["Python", "GTK4", "PyGObject"],
+    link: "https://github.com/markbus-ai/writearch",
+    impact: "Proporciona una herramienta eficiente para tomar notas en entornos Linux nativos",
+    challenges: "Integración completa con GTK4 y D-Bus para una experiencia nativa",
+    solution: "Uso de GObject signals y arquitectura MVC-like para modularidad"
+  },
+  {
   title: "Bot de WhatsApp para Bicicletería Amigorena",
   description: "Un bot automatizado de WhatsApp para responder consultas y gestionar la comunicación con clientes",
   details: "Desarrollado a medida para una bicicletería, este bot responde automáticamente a consultas sobre productos, repuestos, taller y horarios. Incluye lógica de respuestas múltiples, mensajes diferenciados según palabras clave, manejo de doble mensaje y envío de audios o imágenes. Está construido sobre mi librería open source WhatsPlay, que automatiza WhatsApp Web con Playwright.",
@@ -32,10 +43,10 @@ const projects = [
     challenges: "Implementación de sincronización en tiempo real entre dispositivos móviles y sistema central",
     solution: "Utilización de WebSockets para actualizaciones instantáneas y SQLite para gestión de datos local"
   },
-    {
+     {
     title: "Salvemos el Envión Puerto - Sitio de Petición",
     description: "Landing page para campaña de firma de petición online para la reapertura del Centro Comunitario Envión Puerto de Mar del Plata.",
-    details: "Sitio web desarrollado para concientizar sobre el cierre del centro comunitario desde junio 2025 y recolectar firmas digitales para su reapertura. El centro fue cerrado tras hechos de violencia e inseguridad que pusieron en riesgo a jóvenes y educadores. La página incluye formulario de firma, contador de firmas en tiempo real, información sobre el contexto y llamado a la acción para compartir en redes sociales.",
+    details: "Sitio web desarrollado para concientizar sobre el cierre del centro comunitario desde junio 2025 y recolectar firmas digitales para su reapertura. La página incluye formulario de firma, contador de firmas en tiempo real, información sobre el contexto y llamado a la acción para compartir en redes sociales.",
     images: ["img/envion1.png", "img/envion2.png", "img/envion3.png"],
     tech: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
     link: "https://markbus-ai.github.io/envion/",
