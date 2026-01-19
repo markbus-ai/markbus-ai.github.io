@@ -4,7 +4,7 @@ const projects = [
     title: "Notas - Editor de Texto GTK4",
     description: "Editor de texto minimalista escrito en Python usando GTK4 nativo para tomar notas rápidas con características esenciales.",
     details: "Desarrollado como un editor de texto simple para notas, con funcionalidades como búsqueda, corrección ortográfica, vista previa de Markdown, autosave, tema oscuro/claro, y más. Arquitectura modular con integración nativa en Linux.",
-    images: ["img/write", "img/write2"],
+    images: ["img/write.png", "img/write2.png"],
     tech: ["Python", "GTK4", "PyGObject"],
     link: "https://github.com/markbus-ai/writearch",
     impact: "Proporciona una herramienta eficiente para tomar notas en entornos Linux nativos",
