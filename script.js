@@ -103,7 +103,7 @@ const projects = [
     details: "Publica perfiles profesionales de alumnos certificados. Incluye búsqueda y filtros personalizados.",
     images: ["img/bolsa1.png", "img/bolsa2.png", "img/bolsa3.png"],
     tech: ["JavaScript", "HTML", "CSS", "Flask", "SQLite"],
-    link: "https://bolsa-gokd.onrender.com",
+    link: "https://ideal-wren-codigodelmar-95f874b6.koyeb.app/",
     impact: "Facilitó la conexión entre empleadores y candidatos en un 50%",
     challenges: "Sistema de búsqueda y filtrado eficiente",
     solution: "Algoritmos de búsqueda optimizados y filtros personalizados"
@@ -124,7 +124,7 @@ const projects = [
     details: "Genera versiones únicas y seguras de URLs mediante un algoritmo de hash, con redirección automática.",
     images: ["img/url1.png", "img/url2.png"],
     tech: ["Flask", "SQLite", "Python", "Base62"],
-    link: "https://xyz-eexc.onrender.com/",
+    link: "https://markbustos.pythonanywhere.com/",
     impact: "Facilitó compartir enlaces largos en plataformas con restricciones de caracteres",
     challenges: "Evitar colisiones y manejar URLs duplicadas",
     solution: "Algoritmo de hash + almacenamiento seguro en SQLite"
