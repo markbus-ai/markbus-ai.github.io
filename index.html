@@ -3,307 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markbusking - Desarrollador Backend Python</title>
-    <meta name="description" content="Desarrollador Backend especializado en Python, FastAPI y Flask. Creando soluciones eficientes y escalables.">
-    <meta name="keywords" content="python, backend, desarrollo, fastapi, flask, sql">
+    <title>Marcos Bustos | Backend Developer</title>
+    <meta name="description" content="Portfolio de Marcos Bustos - Desarrollador Backend Python & Experto en Automatización.">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="script.js" as="script">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
 </head>
 <body>
-    <header>
-        <nav role="navigation" aria-label="Navegación principal">
-            <h1>Mi Portfolio</h1>
-            <button class="hamburger" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav-links">
-                <a href="#about">Sobre mí</a>
-                <a href="#technologies">Tecnologías</a>
-                <a href="#projects">Proyectos</a>
-                <a href="#contact">Contacto</a>
+
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="window-controls">
+                <div class="control close"></div>
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
             </div>
-        </nav>
-    </header>
+            <div class="window-title">[user@mbustos-portfolio ~]$ THU JAN 29 2026 11:01:28</div>
+        </div>
 
-    <main role="main">
-        <section class="hero">
-            <h2>Bienvenidos, soy Markbusking</h2>
-            <p>Convirtiendo ideas en soluciones elegantes a través del código</p>
-        </section>
-
-        
-        <section id="about" class="about">
-            <div class="about-content">
-                <h2>Sobre mí</h2>
-                <p>
-                    Mi nombre es Marcos Bustos. Soy un programador backend, especializado en Python. Como apasionado por la tecnología y el aprendizaje continuo, siempre estoy en búsqueda de nuevas formas de mejorar mis habilidades y enfrentar desafíos que me permitan crecer. Aunque mi experiencia es reciente, tengo un enfoque dedicado en crear soluciones eficientes y escalables. Estoy emocionado por las oportunidades que el mundo del desarrollo tiene para ofrecer y por aprender más cada día.
-                </p>
+        <div class="terminal-body">
+            <!-- Navigation Bar (Always Visible) -->
+            <div class="nav-buttons" style="margin: 0 0 30px 0; border-top: none; border-bottom: 1px solid var(--border-color); padding-bottom: 20px;">
+                <button class="nav-btn" data-target="home">~/home</button>
+                <button class="nav-btn" data-target="about_me">./about_me</button>
+                <button class="nav-btn" data-target="projects">ls projects/</button>
+                <button class="nav-btn" data-target="experience">cat experience.log</button>
+                <button class="nav-btn" data-target="contact">./contact</button>
             </div>
-        </section>
-        
-        <section id="projects" class="projects">
-            <h2>Mis Proyectos</h2>
-            <div class="project-grid" id="projectGrid">
-                <!-- El contenido se generará dinámicamente desde JavaScript -->
+
+            <!-- Hero Section / Home -->
+            <section id="home" class="active">
+                <div class="hero-container" style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap;">
+                    <!-- Avatar Area -->
+                    <div class="hero-avatar">
+                        <div class="avatar-ascii">
+                           <pre style="font-size: 0.5rem; line-height: 0.5rem; color: var(--green-color);">
+      /$$$$$$ 
+     /$$__  $$
+    | $$  \__/
+    |  $$$$$$ 
+     \____  $$
+     /$$  \ $$
+    |  $$$$$$/
+     \______/ 
+                           </pre>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-content">
+                        <div class="hero-command">
+                            <span class="prompt">&gt;</span>
+                            <span class="command">whoami</span>
+                        </div>
+                        <div class="hero-output">
+                            <h1>Marcos Bustos</h1>
+                            <p class="role-title">Python Backend & Automation Expert</p>
+                            
+                            <div class="quick-skills" style="margin: 15px 0;">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Playwright</span>
+                                <span class="tech-tag">SQL</span>
+                            </div>
+
+                            <p class="bio-short" style="margin-bottom: 20px; font-size: 1rem; color: var(--text-color);">
+                                Transformando ideas en sistemas robustos y eficientes.
+                            </p>
+
+                            <div class="hero-actions">
+                                <a href="img/marcossbustoss.pdf" target="_blank" class="nav-btn" style="display: inline-block; width: auto; text-align: center;">
+                                    ⬇ Download CV.pdf
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <div class="section-command">
+                    <span class="prompt">[user@mbustos ~]$</span> ls -la ./projects/
+                </div>
+                <div class="section-output">
+                    <p>Listing 3 items in projects/...</p>
+                    <br>
+                    <div class="projects-list" id="projectGrid">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+            </section>
+
+             <!-- About Me Section -->
+             <section id="about_me">
+                <div class="section-command">
+                    <span class="prompt">[user@mbustos ~]$</span> cat about_me.md
+                </div>
+                <div class="section-output about-content">
+                    <p style="color: var(--gray-color)"># Objetivo Profesional</p>
+                    <br>
+                    <p>Desarrollador Backend con sólida base técnica en <strong>Python</strong> y <strong>automatización</strong>.</p>
+                    <br>
+                    <p>Mi objetivo es implementar soluciones que reduzcan la intervención manual en un <strong>80%</strong> y mejoren la escalabilidad de APIs. Busco aplicar mi experiencia en mantenimiento de sistemas en producción y arquitecturas asincrónicas para elevar la eficiencia operativa.</p>
+                    <br>
+                    <p style="color: var(--blue-color)">> Stack Tecnológico:</p>
+                    <div class="tech-tags topic-tags">
+                        <span class="tech-tag">Python (Asyncio)</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Playwright</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Linux (SysAdmin)</span>
+                        <span class="tech-tag">Flutter</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience">
+                <div class="section-command">
+                    <span class="prompt">[user@mbustos ~]$</span> tail -n 10 experience.log
+                </div>
+                <div class="section-output">
+                    <div class="timeline">
+                        <!-- Jobs -->
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026 - Actualidad</div>
+                            <div class="timeline-content">
+                                <h3>Backend & Mobile Developer</h3>
+                                <p class="text-sm">Beemore (Freelance) | Appi.ar</p>
+                                <p class="text-gray">- Mantenimiento correctivo y resolución de bugs.</p>
+                                <p class="text-gray">- Optimización e integración con Flutter.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date">2024 - 2025</div>
+                            <div class="timeline-content">
+                                <h3>Backend Developer (Automatización)</h3>
+                                <p class="text-sm">Bicicletería Amigorena</p>
+                                <p class="text-gray">- Bot automatizado (+5,000 mensajes procesados, 94.7% éxito).</p>
+                                <p class="text-gray">- Atención 24/7 garantizada (99.5% de consultas).</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date">2025</div>
+                            <div class="timeline-content">
+                                <h3>Creador Software Open Source</h3>
+                                <p class="text-sm">WhatsPlay (Proyecto Personal)</p>
+                                <p class="text-gray">- Librería de automatización WhatsApp Web con Playwright.</p>
+                                <p class="text-gray">- Persistencia de sesión en servidores Linux.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date">2024</div>
+                            <div class="timeline-content">
+                                <h3>Desarrollador Backend</h3>
+                                <p class="text-sm">Sistema MozoPlus</p>
+                                <p class="text-gray">- Sincronización Real-time (WebSockets + PostgreSQL).</p>
+                                <p class="text-gray">- API escalable con FastAPI.</p>
+                            </div>
+                        </div>
+
+                        <!-- Education (Condensed) -->
+                         <div class="timeline-item">
+                            <div class="timeline-date">Educación</div>
+                            <div class="timeline-content">
+                                <p class="text-sm"><strong>ISFT 204:</strong> Tecnicatura en Desarrollo de Software (En curso)</p>
+                                <p class="text-sm"><strong>CFP 403:</strong> Especializaciones en DB, Backend y Testing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <div class="section-command">
+                    <span class="prompt">[user@mbustos ~]$</span> ./contact.sh --verbose
+                </div>
+                <div class="section-output">
+                    <p>Initiating communication protocols...</p>
+                    <p>Channels open:</p>
+                    <div class="contact-links">
+                        <a href="https://github.com/markbus-ai" target="_blank" class="contact-link">
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/marcos-bustos-7327962ab/" target="_blank" class="contact-link">
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="mailto:markbustos1912@gmail.com" class="contact-link">
+                            <span>Email</span>
+                        </a>
+                        <a href="img/marcossbustoss.pdf" target="_blank" class="contact-link">
+                            <span>Download CV</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Terminal Input -->
+            <div class="terminal-input-area">
+                <span class="prompt">[user@mbustos ~]$</span>
+                <input type="text" id="commandInput" class="terminal-input" autocomplete="off" autofocus>
             </div>
-        </section>
-        <section id="technologies" class="technologies">
-            <h2>Tecnologías & Habilidades</h2>
-            <div class="tech-container">
-                <div class="tech-category">
-                    <h3>Desarrollo Backend</h3>
-                    <div class="tech-list">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/fastapi.svg" alt="FastAPI" width="24" height="24">
-                            </div>
-                            <span class="tech-name">FastAPI</span>
-                            <span class="tech-level">Intermedio</span>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/flask.svg" alt="Flask" width="24" height="24">
-                            </div>
-                            <span class="tech-name">Flask</span>
-                            <span class="tech-level">Intermedio</span>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/sql.svg" alt="SQL" width="24" height="24">
-                            </div>
-                            <span class="tech-name">SQL</span>
-                            <span class="tech-level">Intermedio</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3>Lenguajes de Programación</h3>
-                    <div class="tech-list">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/python.svg" alt="Python" width="24" height="24">
-                            </div>
-                            <span class="tech-name">Python</span>
-                            <span class="tech-level">Avanzado</span>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/javascript.svg" alt="JavaScript" width="24" height="24">
-                            </div>
-                            <span class="tech-name">JavaScript</span>
-                            <span class="tech-level">Básico</span>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/dart.svg" alt="Dart" width="24" height="24">
-                            </div>
-                            <span class="tech-name">Dart</span>
-                            <span class="tech-level">Básico</span>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/c.svg" alt="C" width="24" height="24">
-                            </div>
-                            <span class="tech-name">C</span>
-                            <span class="tech-level">Intermedio</span>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="tech-category">
-                    <h3>Desarrollo Frontend</h3>
-                    <div class="tech-list">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/css3.svg" alt="CSS" width="24" height="24">
-                            </div>
-                            <span class="tech-name">CSS</span>
-                            <span class="tech-level">Básico</span>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/flutter.svg" alt="Flutter" width="24" height="24">
-                            </div>
-                            <span class="tech-name">Flutter</span>
-                            <span class="tech-level">Básico</span>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/html5.svg" alt="HTML" width="24" height="24">
-                            </div>
-                            <span class="tech-name">HTML</span>
-                            <span class="tech-level">Básico</span>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/pyqt5.svg" alt="PyQt5" width="24" height="24">
-                            </div>
-                            <span class="tech-name">PyQt5</span>
-                            <span class="tech-level">Básico</span>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="tech-category">
-                    <h3>Herramientas & Otros</h3>
-                    <div class="tech-list">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/git.svg" alt="Git" width="24" height="24">
-                            </div>
-                            <span class="tech-name">Git</span>
-                            <span class="tech-level">Intermedio</span>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/docker.svg" alt="Docker" width="24" height="24">
-                            </div>
-                            <span class="tech-name">Docker</span>
-                            <span class="tech-level">Básico</span>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/linux.svg" alt="Linux" width="24" height="24">
-                            </div>
-                            <span class="tech-name">Linux</span>
-                            <span class="tech-level">Intermedio</span>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <img src="img/icons/api.svg" alt="API" width="24" height="24">
-                            </div>
-                            <span class="tech-name">API</span>
-                            <span class="tech-level">Intermedio</span>
-                        </div>
-                    </div>
-                </div>
+            <div style="margin-top: 10px; font-size: 0.8rem; color: var(--gray-color);">
+                (Type 'help' for available commands or use the buttons above)
             </div>
-        </section>
-
-        <!-- Achievements section -->
-        <section id="achievements" class="achievements">
-            <h2>Logros Destacados</h2>
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon">🚀</div>
-                    <h3>Sistema de Pedidos</h3>
-                    <p>Implementación exitosa en restaurantes locales mejorando la eficiencia en un 40%</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">🤖</div>
-                    <h3>Chatbot IA</h3>
-                    <p>Integración avanzada con API de Gemini para procesamiento de lenguaje natural</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">💼</div>
-                    <h3>Bolsa de Trabajo</h3>
-                    <p>Plataforma que conecta estudiantes certificados con empleadores potenciales</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience section -->
-        <section id="experience" class="experience">
-            <h2>Mi Trayectoria</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2025</div>
-                    <div class="timeline-content">
-                        <h3>Tecnicatura en desarrollo de software</h3>
-                        <p>ISFT 204</p>
-                        <ul>
-                            <li>Fundamentos de programación</li>
-                            <li>Desarrollo web y móvil</li>
-                            <li>Bases de datos y SQL</li>
-                            <li>Metodologías ágiles</li>
-                            <li>Análisis y diseño de sistemas</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2025</div>
-                        <div class="timeline-content">
-                            <h3>Ingles para tecnologia 1</h3>
-                            <p>CFP 403</p>
-                            <ul>
-                                <li>Comprensión y producción oral</li>
-                                <li>Vocabulario técnico</li>
-                                <li>Lectura de documentación</li>
-                                <li>Redacción técnica</li>
-                                <li>Comunicación profesional</li>
-                            </ul>
-                        </div>
-                    </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2023</div>
-                    <div class="timeline-content">
-                        <h3>Testing De Aplicaciones</h3>
-                        <p>CFP 403</p>
-                        <ul>
-                            <li>Desarrollo de pruebas automatizadas</li>
-                            <li>Testing de aplicaciones web y móviles</li>
-                            <li>Metodologías ágiles</li>
-                            <li>Selenium, JUnit, TestNG</li>
-                            <li>Testing funcional y no funcional</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2023</div>
-                    <div class="timeline-content">
-                        <h3>Programación</h3>
-                        <p>CFP 403</p>
-                        <ul>
-                            <li>Desarrollo de aplicaciones de escritorio</li>
-                            <li>Python, Tkinter</li>
-                            <li>Bases de datos SQL (MySQL, SQLite)</li>
-                            <li>Programación en C</li>
-                            <li>Fundamentos de algoritmos y estructuras de datos</li>
-                        </ul>
-                    </div>
-                </div>
-        </section>
-
-        <!-- Contact section -->
-        <footer id="contact">
-            <h2>Contáctame</h2>
-            <div class="social-links">
-                <a href="https://github.com/markbus-ai" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/marcos-bustos-7327962ab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a>
-                <a href="img/marcossbustoss.pdf" target="_blank" rel="noopener noreferrer" download aria-label="Descargar CV">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                </a>
-            </div>
-            <p class="copyright">&copy; 2024 Markbusking. Todos los derechos reservados.</p>
-        </footer>
-    </main>
-
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modalTitle"></h2>
-            <p id="modalDescription"></p>
-            <div id="modalTechTags"></div>
-            <p id="modalImpact"></p>
-            <p id="modalChallenges"></p>
-            <p id="modalSolution"></p>
-            <div id="carouselImages" class="carousel"></div>
-            <button class="carousel-button prev">Anterior</button>
-            <button class="carousel-button next">Siguiente</button>
         </div>
     </div>
 
-    <script src="script.js" defer></script>
+    <!-- Modal for Project Details -->
+    <!-- Terminal Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeProjectModal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle" style="color: var(--blue-color); margin-bottom: 15px;"></h2>
+            </div>
+            
+            <div class="modal-body-content">
+                <p id="modalDescription" style="margin-bottom: 20px; font-size: 1.1rem;"></p>
+                
+                <div id="modalTags" class="tech-tags" style="margin-bottom: 25px;"></div>
+                
+                <div class="modal-section">
+                    <h3 style="color: var(--orange-color); font-size: 1rem; margin-bottom: 8px;">> Challenge:</h3>
+                    <p id="modalChallenge" style="color: var(--gray-color);"></p>
+                </div>
+
+                <div class="modal-section" style="margin-top: 15px;">
+                    <h3 style="color: var(--green-color); font-size: 1rem; margin-bottom: 8px;">> Solution:</h3>
+                    <p id="modalSolution" style="color: var(--gray-color);"></p>
+                </div>
+
+                <div id="modalImages" class="image-gallery" style="margin-top: 30px; display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
+                    <!-- Images injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help Modal (New) -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="close-modal" id="closeHelpModal">&times;</span>
+            <div class="modal-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">
+                <h2 style="color: var(--orange-color);">> Terminal Help Menu</h2>
+            </div>
+            <div class="help-grid">
+                <div class="help-item">
+                    <span class="cmd">whoami</span>
+                    <span class="desc">Volver al inicio / Perfil</span>
+                </div>
+                <div class="help-item">
+                    <span class="cmd">ls projects/</span>
+                    <span class="desc">Listar mis proyectos</span>
+                </div>
+                <div class="help-item">
+                    <span class="cmd">cat about_me</span>
+                    <span class="desc">Leer información personal</span>
+                </div>
+                <div class="help-item">
+                    <span class="cmd">cat experience.log</span>
+                    <span class="desc">Ver historial laboral</span>
+                </div>
+                <div class="help-item">
+                    <span class="cmd">./contact</span>
+                    <span class="desc">Abrir canales de contacto</span>
+                </div>
+                <div class="help-item">
+                    <span class="cmd">clear</span>
+                    <span class="desc">Limpiar pantalla</span>
+                </div>
+            </div>
+            <div style="margin-top: 20px; font-size: 0.8rem; color: var(--gray-color); text-align: center;">
+                [ Press ESC or click X to close ]
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
