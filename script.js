@@ -1,6 +1,17 @@
 // Project Data
 const projects = [
   {
+    title: "qrgen",
+    description: "Generador de códigos QR instantáneo y personalizable para URLs, Wi-Fi, vCards y más, con backend en Python.",
+    details: "La aplicación permite generar diversos tipos de códigos QR (URLs, Wi-Fi, vCards, SMS, Email). Ofrece personalización total de colores, incrustación de logos con protección de lectura y generación de imágenes PNG de alta calidad.",
+    images: ["img/qrgen1.png", "img/qrgen2.png", "img/qrgen3.png"],
+    tech: ["React", "Vite", "FastAPI", "Python", "AlwaysData", "Mantine"],
+    link: "https://markbus-ai.github.io/qrgen",
+    impact: "Generación segura y estandarizada de QR con personalización avanzada.",
+    challenges: "Integración de logotipos sin invalidar el código y estandarización de vCards/Wi-Fi.",
+    solution: "Uso de Pillow para redimensionamiento inteligente (25%) y segno.helpers para cumplir estándares MECARD/WIFI."
+  },
+  {
     title: "writearch",
     description: "Editor de texto minimalista con GTK4. Funcionalidades: auto-guardado, corrección ortográfica, dark mode.",
     details: "Arquitectura modular con integración nativa en Linux. Ideal para tomar notas rápidas sin distracciones.",
