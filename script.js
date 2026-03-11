@@ -1,6 +1,17 @@
 // Project Data
 const projects = [
   {
+    title: "n8n-NewRelease",
+    description: "Sistema de notificaciones automatizado para releases de GitHub vía Telegram, resumidos con IA.",
+    details: "Monitorea repositorios de GitHub mediante un cronjob en n8n, almacena suscripciones en PostgreSQL y usa la API de Groq (Llama 3) para generar resúmenes técnicos de los releases. Orquestado con Docker Compose.",
+    images: ["img/n8n_1.jpeg", "img/n8n_2.jpeg"],
+    tech: ["n8n", "PostgreSQL", "Docker", "Groq AI", "Telegram API"],
+    link: "https://github.com/markbus-ai/n8n-NewRelease",
+    impact: "Automatiza el seguimiento de actualizaciones de software Open Source.",
+    challenges: "Procesamiento de datos JSON anidados de la API de GitHub y flujos condicionales.",
+    solution: "Flujos de trabajo divididos en n8n: gestión de suscripciones vs. polling/notificaciones."
+  },
+  {
     title: "qrgen",
     description: "Generador de códigos QR instantáneo y personalizable para URLs, Wi-Fi, vCards y más, con backend en Python.",
     details: "La aplicación permite generar diversos tipos de códigos QR (URLs, Wi-Fi, vCards, SMS, Email). Ofrece personalización total de colores, incrustación de logos con protección de lectura y generación de imágenes PNG de alta calidad.",
