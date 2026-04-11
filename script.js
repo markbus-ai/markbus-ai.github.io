@@ -1,6 +1,17 @@
 // Project Data
 const projects = [
   {
+    title: "Beemore - Appi.ar",
+    description: "Mantenimiento evolutivo y soporte fullstack para plataforma de gestión logística.",
+    details: "Optimización de la aplicación móvil en Flutter y sincronización de servicios backend para garantizar la paridad operativa entre plataformas web y mobile. Gestión de actualizaciones críticas y mejora de UX.",
+    images: ["img/beemore1.png"], // Reemplazá por tus capturas
+    tech: ["Flutter", "Dart", "Python", "API REST"],
+    link: "https://play.google.com/store/apps/details?id=com.appiar.consultores.agroapicolas&referrer=utm_source%3Dapkpure.com&pli=1", 
+    impact: "Aseguró la continuidad operativa de la app y la consistencia de datos en tiempo real.",
+    challenges: "Sincronización de lógica de negocio entre el core de la plataforma y la interfaz móvil.",
+    solution: "Refactorización de handlers y estandarización de consumo de APIs para reducir latencia."
+  },
+  {
     title: "n8n-NewRelease",
     description: "Sistema de notificaciones automatizado para releases de GitHub vía Telegram, resumidos con IA.",
     details: "Monitorea repositorios de GitHub mediante un cronjob en n8n, almacena suscripciones en PostgreSQL y usa la API de Groq (Llama 3) para generar resúmenes técnicos de los releases. Orquestado con Docker Compose.",
