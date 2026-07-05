@@ -125,7 +125,7 @@
                 <div class="control minimize"></div>
                 <div class="control maximize"></div>
             </div>
-            <div class="window-title">[user@mbustos-portfolio ~]$ SUN JUL 05 2026 12:00:00</div>
+            <div class="window-title" id="terminalDate">[user@mbustos-portfolio ~]$ LOADING...</div>
         </div>
 
         <div class="terminal-body">
@@ -260,12 +260,13 @@
                         </div>
 
                         <div class="timeline-item">
-                            <div class="timeline-date">2024 - 2025</div>
+                            <div class="timeline-date">2024 - Actualidad</div>
                             <div class="timeline-content">
-                                <h3>Backend Developer (Automatización)</h3>
+                                <h3>Backend Developer Freelance</h3>
                                 <p class="text-sm">Bicicletería Amigorena</p>
-                                <p class="text-gray">- Bot automatizado (+5,000 mensajes procesados, 94.7% éxito).</p>
+                                <p class="text-gray">- Bot automatizado de atención al cliente (+5,000 mensajes/mes, 94.7% éxito).</p>
                                 <p class="text-gray">- Atención 24/7 garantizada (99.5% de consultas).</p>
+                                <p class="text-gray">- Mantenimiento continuo y mejoras sobre el sistema en producción.</p>
                             </div>
                         </div>
 
@@ -408,5 +409,23 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Dynamic terminal date
+        (function updateTerminalDate() {
+            const el = document.getElementById('terminalDate');
+            if (!el) return;
+            const d = new Date();
+            const days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+            const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+            const day = days[d.getDay()];
+            const mon = months[d.getMonth()];
+            const date = String(d.getDate()).padStart(2,'0');
+            const year = d.getFullYear();
+            const hh = String(d.getHours()).padStart(2,'0');
+            const mm = String(d.getMinutes()).padStart(2,'0');
+            const ss = String(d.getSeconds()).padStart(2,'0');
+            el.textContent = `[user@mbustos-portfolio ~]$ ${day} ${mon} ${date} ${year} ${hh}:${mm}:${ss}`;
+        })();
+    </script>
 </body>
 </html>
