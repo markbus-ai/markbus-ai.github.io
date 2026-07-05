@@ -1,26 +1,70 @@
 // Project Data
 const projects = [
   {
-    title: "Beemore - Appi.ar",
-    description: "Mantenimiento evolutivo y soporte fullstack para plataforma de gestión logística.",
-    details: "Optimización de la aplicación móvil en Flutter y sincronización de servicios backend para garantizar la paridad operativa entre plataformas web y mobile. Gestión de actualizaciones críticas y mejora de UX.",
-    images: ["img/beemore1.png"], // Reemplazá por tus capturas
-    tech: ["Flutter", "Dart", "Python", "API REST"],
-    link: "https://play.google.com/store/apps/details?id=com.appiar.consultores.agroapicolas&referrer=utm_source%3Dapkpure.com&pli=1", 
-    impact: "Aseguró la continuidad operativa de la app y la consistencia de datos en tiempo real.",
-    challenges: "Sincronización de lógica de negocio entre el core de la plataforma y la interfaz móvil.",
-    solution: "Refactorización de handlers y estandarización de consumo de APIs para reducir latencia."
+    title: "AppiarWeb / Beemore",
+    description: "Plataforma integral de gestión apícola en producción. React + TypeScript + Firebase.",
+    details: "Sistema completo para la administración de apiarios, tambores, producción de miel y relevamientos técnicos. Incluye dashboard con métricas en tiempo real, mapas interactivos con Leaflet, gestión de usuarios con roles, i18n completo y un sistema de semáforo para estado sanitario de colmenas. Backend en Firebase con sincronización offline-first.",
+    images: ["img/beemore_frontend_demo.mp4"],
+    tech: ["React 19", "TypeScript", "Firebase", "MUI", "TanStack Query", "Leaflet", "Recharts", "Vite"],
+    link: "",
+    impact: "Sistema en producción para Beemore, apícola argentina, con cobertura de gestión técnica y administrativa.",
+    challenges: "Sincronización offline-first en zonas rurales sin conectividad estable, y modelado de datos apícolas con semáforo sanitario y esquema de relevamientos complejo.",
+    solution: "Firebase con persistencia local, optimistic updates con TanStack Query, y arquitectura de features modular con tipos estrictos en TypeScript."
   },
   {
-    title: "n8n-NewRelease",
-    description: "Sistema de notificaciones automatizado para releases de GitHub vía Telegram, resumidos con IA.",
-    details: "Monitorea repositorios de GitHub mediante un cronjob en n8n, almacena suscripciones en PostgreSQL y usa la API de Groq (Llama 3) para generar resúmenes técnicos de los releases. Orquestado con Docker Compose.",
-    images: ["img/n8n_1.jpeg", "img/n8n_2.jpeg"],
-    tech: ["n8n", "PostgreSQL", "Docker", "Groq AI", "Telegram API"],
-    link: "https://github.com/markbus-ai/n8n-NewRelease",
-    impact: "Automatiza el seguimiento de actualizaciones de software Open Source.",
-    challenges: "Procesamiento de datos JSON anidados de la API de GitHub y flujos condicionales.",
-    solution: "Flujos de trabajo divididos en n8n: gestión de suscripciones vs. polling/notificaciones."
+    title: "BlackFire E-Commerce",
+    description: "Plataforma e-commerce completa con backend en Django y frontend moderno en React.",
+    details: "Sistema comercial integral con gestión de cuentas de usuario, carrito de compras persistente, procesamiento de pedidos, catálogo jerárquico de categorías y productos, y panel de administración dinámico. Empaquetado y orquestado completamente con Docker y Docker Compose.",
+    images: ["img/blackfire.jpg"],
+    tech: ["Python", "Django", "React", "Docker", "PostgreSQL"],
+    link: "https://blackfire.com.ar/",
+    impact: "Sitio web de e-commerce en producción con diseño y experiencia de usuario optimizados para conversión.",
+    challenges: "Sincronización de estados del carrito entre React y la API de Django, y orquestación del entorno de desarrollo y producción mediante contenedores.",
+    solution: "Endpoints REST robustos con autenticación JWT, contenedores Docker optimizados para backend/frontend y comunicación por sockets locales."
+  },
+  {
+    title: "MozoPlus",
+    description: "Sistema de gestión de pedidos en tiempo real (FastAPI + WebSockets + PostgreSQL).",
+    details: "Sincronización instantánea de comandas entre mozos y cocina. Backend asíncrono altamente escalable diseñado para soportar picos de alta demanda en redes locales.",
+    images: ["img/comanda1.png", "img/comanda2.png"],
+    tech: ["FastAPI", "WebSockets", "PostgreSQL", "Flutter"],
+    link: "",
+    impact: "Sincronización instantánea de comandas sin retraso percibido.",
+    challenges: "Latencia cero y reconexión automática en redes locales inestables.",
+    solution: "Arquitectura asíncrona robusta apoyada en WebSockets y manejadores de conexiones persistentes."
+  },
+  {
+    title: "whatsapp-bot",
+    description: "Bot automatizado de WhatsApp para gestión comercial de clientes. +5000 mensajes procesados.",
+    details: "Desarrollado para Bicicletería Amigorena. Procesa solicitudes de clientes 24/7 con detección de intenciones, cola de mensajes inteligentes y soporte para fallos de conexión.",
+    images: ["img/wsp1.png"],
+    tech: ["Python", "Playwright", "Asyncio"],
+    link: "", // Private
+    impact: "Automatizó el 99.5% de las consultas de clientes con un 94.7% de efectividad.",
+    challenges: "Mantenimiento y persistencia de sesiones web en entornos headless frente a desconexiones.",
+    solution: "Estrategias de persistencia de sesión local y re-conexión automática con lógica exponencial de reintentos."
+  },
+  {
+    title: "whatsplay",
+    description: "Librería Open Source para automatizar WhatsApp Web via Playwright.",
+    details: "API wrapper modular para login, envío de mensajes, detección de estados de entrega e interacciones del chat sin requerir la API oficial.",
+    images: ["img/wsp1.png"],
+    tech: ["Python", "Playwright", "XPath"],
+    link: "https://github.com/markbus-ai/whatsplay",
+    impact: "Facilita la automatización y creación de agentes/bots para integradores independientes.",
+    challenges: "Selectores dinámicos y updates constantes en el DOM de WhatsApp Web.",
+    solution: "Selectores XPath robustos e independientes del árbol DOM primario combinados con esperas inteligentes."
+  },
+  {
+    title: "mutils",
+    description: "Colección modular de micro-utilidades CLI en C para optimizar flujos de trabajo en Linux.",
+    details: "Reemplaza comandos complejos de shell con binarios nativos rápidos. Incluye extracción de texto con OCR en Wayland, gestión de umbrales de carga de batería, finalizador automático de procesos por puerto (port slayer), limpieza recursiva de basura de desarrollo (nuke), verificador de variables de entorno (.env) y Smart Extract (x) multiformato.",
+    images: ["img/mutils.jpg"],
+    tech: ["C", "Tesseract OCR", "Linux CLI", "libcurl", "libarchive"],
+    link: "https://github.com/markbus-ai/mutils",
+    impact: "Automatiza y acelera tareas comunes de desarrollo y administración de sistemas en Linux con binarios de alto rendimiento.",
+    challenges: "Integración de librerías nativas como Tesseract OCR y libarchive en C, control estricto de buffers y llamadas a APIs de bajo nivel.",
+    solution: "Arquitectura modular separando comandos en archivos individuales, orquestados bajo un makefile común y un despachador en main.c."
   },
   {
     title: "qrgen",
@@ -33,138 +77,6 @@ const projects = [
     challenges: "Integración de logotipos sin invalidar el código y estandarización de vCards/Wi-Fi.",
     solution: "Uso de Pillow para redimensionamiento inteligente (25%) y segno.helpers para cumplir estándares MECARD/WIFI."
   },
-  {
-    title: "writearch",
-    description: "Editor de texto minimalista con GTK4. Funcionalidades: auto-guardado, corrección ortográfica, dark mode.",
-    details: "Arquitectura modular con integración nativa en Linux. Ideal para tomar notas rápidas sin distracciones.",
-    images: ["img/write.png", "img/write2.png"],
-    tech: ["Python", "GTK4", "PyGObject"],
-    link: "https://github.com/markbus-ai/writearch",
-    impact: "Eficiencia en entornos Linux nativos.",
-    challenges: "Integración con D-Bus y señales GObject.",
-    solution: "MVC-like pattern y GObject signals."
-  },
-  {
-    title: "whatsapp-bot",
-    description: "Bot automatizado de WhatsApp para gestión de clientes. +5000 mensajes procesados.",
-    details: "Desarrollado para Bicicletería Amigorena. Procesó +5,000 mensajes con un 94.7% de éxito. Detección de intenciones y respuestas 24/7.",
-    images: ["img/wsp1.png"],
-    tech: ["Python", "Playwright", "Asyncio"],
-    link: "", // Private
-    impact: "Automatizó el 99.5% de las consultas.",
-    challenges: "Mantener sesión persistente y manejar desconexiones.",
-    solution: "Lógica de re-conexión automática y colas de mensajes."
-  },
-  {
-      title: "coach-web",
-      description: "Sitio web profesional para coaching emocional. Deploy en VPS Linux + Cloudflare.",
-      details: "Landing page enfocada en conversión UX/UI. Despliegue en VPS Linux con reverse proxy y seguridad Cloudflare.",
-      images: ["img/coach1.png", "img/coach2.png"],
-      tech: ["HTML/CSS", "JS", "Linux VPS", "Cloudflare"],
-      link: "https://coachemocionalmentesaludable.site",
-      impact: "Presencia digital profesional y segura.",
-      challenges: "Configuración de servidor y seguridad.",
-      solution: "Nginx reverse proxy + Cloudflare WAF."
-  },
-  {
-    title: "MozoPlus",
-    description: "Sistema de gestión de pedidos (MozoPlus). WebSockets + PostgreSQL.",
-    details: "Sincronización en tiempo real entre mozos y cocina. Backend escalable con FastAPI para alta demanda.",
-    images: ["img/comanda1.png", "img/comanda2.png"],
-    tech: ["FastAPI", "WebSockets", "PostgreSQL", "Flutter"],
-    link: "",
-    impact: "Sincronización instantánea de comandas.",
-    challenges: "Latencia cero en redes locales.",
-    solution: "Arquitectura asíncrona con WebSockets."
-  },
-  {
-      title: "envion-web",
-      description: "Landing page para recolección de firmas digitales (causa social).",
-      details: "Contador en tiempo real, formulario simple y alto impacto visual.",
-      images: ["img/envion1.png"],
-      tech: ["HTML5", "GitHub Pages"],
-      link: "https://markbus-ai.github.io/envion/",
-      impact: "Movilización comunitaria digital.",
-      challenges: "Maximizar conversión de firmas.",
-      solution: "UX directo y performance ultra-rápida."
-  },
-  {
-    title: "whatsplay",
-    description: "Librería Open Source para automatizar WhatsApp Web via Playwright.",
-    details: "API wrapper para login, envío de mensajes y detección de estados.",
-    images: ["img/wsp1.png"],
-    tech: ["Python", "Playwright", "XPath"],
-    link: "https://github.com/markbus-ai/whatsplay",
-    impact: "Facilita la creación de bots sin API oficial.",
-    challenges: "Selectores dinámicos de WhatsApp Web.",
-    solution: "Estrategias de localización robustas (XPath/CSS)."
-  },
-  {
-    title: "opinionscope",
-    description: "Análisis de sentimientos en noticias y redes sociales con NLP.",
-    details: "Scraping de múltiples fuentes + procesamiento de lenguaje natural.",
-    images: ["img/opinion1.png"],
-    tech: ["Flask", "NLP", "Scraping"],
-    link: "https://markbustos.pythonanywhere.com/5d11f6",
-    impact: "Insights visuales sobre opinión pública.",
-    challenges: "Normalización de data no estructurada.",
-    solution: "Pipelines de procesamiento modulares."
-  },
-  {
-    title: "arg-terminal",
-    description: "Juego de investigación tipo ARG basado en terminal linux.",
-    details: "Narrativa inmersiva, puzzles de criptografía y exploración de archivos.",
-    images: ["img/arg1.png"],
-    tech: ["Python", "Textual", "Rich"],
-    link: "https://github.com/markbus-ai/ARG",
-    impact: "Experiencia educativa gamificada.",
-    challenges: "Diseño de narrativa no lineal.",
-    solution: "Máquina de estados para la historia."
-  },
-  {
-      title: "gemini-chat",
-      description: "Cliente de chat de escritorio potenciado por Google Gemini API.",
-      details: "Generación de código, gráficos y asistencia técnica en local.",
-      images: ["img/gemini1.png"],
-      tech: ["CustomTkinter", "Gemini API"],
-      link: "https://github.com/markbus-ai/Gemini-desktop",
-      impact: "Asistente AI integrado en workflow.",
-      challenges: "Manejo de streaming responses.",
-      solution: "Threading y actualizaciones de GUI asíncronas."
-  },
-    {
-      title: "job-board",
-      description: "Plataforma de conexión laboral para estudiantes certificados.",
-      details: "Perfiles, búsqueda filtrada y contacto directo empleador-alumno.",
-      images: ["img/bolsa1.png"],
-      tech: ["Flask", "SQLite", "Jinja2"],
-      link: "https://ideal-wren-codigodelmar-95f874b6.koyeb.app/",
-      impact: "Inserción laboral facilitada.",
-      challenges: "Filtrado eficiente de perfiles.",
-      solution: "Queries SQL dinámicas y optimizadas."
-    },
-    {
-      title: "pip-gui",
-      description: "Interfaz gráfica moderna para gestión de paquetes Python (pip).",
-      details: "Instalar, actualizar y eliminar librerías sin tocar la terminal.",
-      images: ["img/pip1.png"],
-      tech: ["Python", "CustomTkinter"],
-      link: "https://github.com/markbus-ai/gestor-de-paquetes",
-      impact: "Accesibilidad para nuevos devs Python.",
-      challenges: "Wrapper de comandos de sistema en tiempo real.",
-      solution: "Subprocess con captura de output en vivo."
-    },
-    {
-      title: "url-shortener",
-      description: "Servicio de acortamiento de URLs con analíticas básicas.",
-      details: "Generación de alias únicos y redirección rápida.",
-      images: ["img/url1.png"],
-      tech: ["Flask", "Base62"],
-      link: "https://markbustos.pythonanywhere.com/",
-      impact: "Links compartibles y tracking.",
-      challenges: "Colisiones de hash.",
-      solution: "Algoritmo Base62 incremental."
-    }
 ];
 
 // DOM Elements
@@ -245,13 +157,20 @@ function renderProjects() {
         let imageHtml = '';
         const hasMultipleImages = project.images && project.images.length > 1;
         
+        function isVideo(src) {
+            return src.endsWith('.mp4') || src.endsWith('.webm') || src.endsWith('.mov');
+        }
+
         if (project.images && project.images.length > 0) {
             if (hasMultipleImages) {
                 // Carousel Structure
                 const slidesHtml = project.images.map((img, i) => `
                     <div class="carousel-slide ${i === 0 ? 'active' : ''}" data-index="${i}">
-                        <img src="${img}" alt="${project.title} ${i + 1}" onerror="this.src=''; this.style.display='none'">
-                    </div>
+                                ${isVideo(img)
+                                    ? `<video src="${img}" muted autoplay loop playsinline style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></video>`
+                                    : `<img src="${img}" alt="${project.title} - screenshot ${i + 1}" loading="lazy" decoding="async" onerror="this.src=''; this.style.display='none'">`
+                                }
+                            </div>
                 `).join('');
 
                 imageHtml = `
@@ -259,15 +178,20 @@ function renderProjects() {
                         <div class="carousel-track">
                             ${slidesHtml}
                         </div>
-                        <button class="card-carousel-btn card-prev" onclick="prevSlide(event, ${index})">&#10094;</button>
-                        <button class="card-carousel-btn card-next" onclick="nextSlide(event, ${index})">&#10095;</button>
+                        <button class="card-carousel-btn card-prev" onclick="prevSlide(event, ${index})" onkeydown="if(event.key==='Enter'||event.key===' ')prevSlide(event,${index})" aria-label="Anterior imagen">&#10094;</button>
+                        <button class="card-carousel-btn card-next" onclick="nextSlide(event, ${index})" onkeydown="if(event.key==='Enter'||event.key===' ')nextSlide(event,${index})" aria-label="Siguiente imagen">&#10095;</button>
                     </div>
                 `;
             } else {
-                // Single Image
+                // Single Image / Video
+                const src = project.images[0];
+                const mediaHtml = isVideo(src)
+                    ? `<video src="${src}" muted autoplay loop playsinline style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></video>`
+                    : `<img src="${src}" alt="${project.title}" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">`;
+
                 imageHtml = `
                     <div class="project-card-image clickable-image" data-project-index="${index}">
-                        <img src="${project.images[0]}" alt="${project.title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        ${mediaHtml}
                         <div class="placeholder-ascii" style="display:none; text-align:center;">
                             <pre style="font-size: 0.5rem; line-height: 0.8;">
    +---------+
@@ -379,33 +303,48 @@ function changeCardSlide(projectIndex, direction) {
 }
 
 // Modal Logic
+let lastFocusedElement = null;
+
 function setupModals() {
+
     // Project Modal
     closeProjectBtn.addEventListener('click', () => {
         projectModal.style.display = 'none';
         projectModal.classList.remove('active');
+        if (lastFocusedElement) lastFocusedElement.focus();
     });
 
     // Help Modal
     closeHelpBtn.addEventListener('click', () => {
         helpModal.style.display = 'none';
+        if (lastFocusedElement) lastFocusedElement.focus();
     });
 
     // Close on outside click
     window.addEventListener('click', (event) => {
         if (event.target === projectModal) {
             projectModal.style.display = 'none';
+            projectModal.classList.remove('active');
+            if (lastFocusedElement) lastFocusedElement.focus();
         }
         if (event.target === helpModal) {
             helpModal.style.display = 'none';
+            if (lastFocusedElement) lastFocusedElement.focus();
         }
     });
 
     // Close on Escape
     window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            projectModal.style.display = 'none';
-            helpModal.style.display = 'none';
+            if (projectModal.style.display === 'flex') {
+                projectModal.style.display = 'none';
+                projectModal.classList.remove('active');
+                if (lastFocusedElement) lastFocusedElement.focus();
+            }
+            if (helpModal.style.display === 'flex') {
+                helpModal.style.display = 'none';
+                if (lastFocusedElement) lastFocusedElement.focus();
+            }
         }
     });
 }
@@ -422,6 +361,10 @@ function openModal(project) {
     // Images - Create a carousel if multiple images
     modalImages.innerHTML = '';
     
+    function isVideo(src) {
+        return src.endsWith('.mp4') || src.endsWith('.webm') || src.endsWith('.mov');
+    }
+
     if (project.images && project.images.length > 0) {
         if (project.images.length > 1) {
             // Multiple images - create carousel
@@ -430,36 +373,70 @@ function openModal(project) {
                     <div class="modal-carousel-main">
                         ${project.images.map((img, i) => `
                             <div class="modal-slide ${i === 0 ? 'active' : ''}" data-slide="${i}">
-                                <img src="${img}" alt="${project.title} ${i + 1}" onerror="this.style.display='none'">
+                                ${isVideo(img)
+                                    ? `<video src="${img}" controls muted autoplay loop playsinline style="max-width:100%;max-height:500px;border-radius:4px;" onerror="this.style.display='none'"></video>`
+                                    : `<img src="${img}" alt="${project.title} - screenshot ${i + 1}" loading="lazy" decoding="async" onerror="this.style.display='none'">`
+                                }
                             </div>
                         `).join('')}
-                        <button class="modal-carousel-btn modal-prev" onclick="changeModalSlide(-1)">&#10094;</button>
-                        <button class="modal-carousel-btn modal-next" onclick="changeModalSlide(1)">&#10095;</button>
+                        <button class="modal-carousel-btn modal-prev" onclick="changeModalSlide(-1)" onkeydown="if(event.key==='Enter'||event.key===' ')changeModalSlide(-1)" aria-label="Anterior imagen">&#10094;</button>
+                        <button class="modal-carousel-btn modal-next" onclick="changeModalSlide(1)" onkeydown="if(event.key==='Enter'||event.key===' ')changeModalSlide(1)" aria-label="Siguiente imagen">&#10095;</button>
                     </div>
                     <div class="modal-thumbnails">
                         ${project.images.map((img, i) => `
-                            <img src="${img}" 
-                                 class="modal-thumb ${i === 0 ? 'active' : ''}" 
-                                 data-thumb="${i}"
-                                 onclick="goToModalSlide(${i})"
-                                 alt="Thumbnail ${i + 1}"
-                                 onerror="this.style.display='none'">
+                            ${isVideo(img)
+                                ? `<div class="modal-thumb video-thumb" data-thumb="${i}" onclick="goToModalSlide(${i})" style="width:60px;height:40px;background:#1a1a2e;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px solid transparent;border-radius:4px;font-size:1.2rem;">▶</div>`
+                                : `<img src="${img}" 
+                                     class="modal-thumb ${i === 0 ? 'active' : ''}" 
+                                     data-thumb="${i}"
+                                     onclick="goToModalSlide(${i})"
+                                     alt="Thumbnail ${i + 1}"
+                                     onerror="this.style.display='none'">`
+                            }
                         `).join('')}
                     </div>
                 </div>
             `;
             modalImages.innerHTML = carouselHtml;
         } else {
-            // Single image - display centered
-            const img = document.createElement('img');
-            img.src = project.images[0];
-            img.className = 'modal-single-image';
-            img.onerror = function() { this.style.display = 'none'; };
-            modalImages.appendChild(img);
+            // Single image / video - display centered
+            const src = project.images[0];
+            if (isVideo(src)) {
+                const video = document.createElement('video');
+                video.src = src;
+                video.controls = true;
+                video.muted = true;
+                video.autoplay = true;
+                video.loop = true;
+                video.playsInline = true;
+                video.className = 'modal-single-image';
+                video.style.maxHeight = '500px';
+                modalImages.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'modal-single-image';
+                img.alt = project.title;
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                img.onerror = function() { this.style.display = 'none'; };
+                modalImages.appendChild(img);
+            }
         }
     }
 
+    // Save last focused element before opening
+    if (document.activeElement && document.activeElement !== document.body) {
+        lastFocusedElement = document.activeElement;
+    }
+
     projectModal.style.display = 'flex';
+
+    // Focus management: move focus to modal close button
+    requestAnimationFrame(() => {
+        const closeBtn = document.getElementById('closeProjectModal');
+        if (closeBtn) closeBtn.focus();
+    });
 }
 
 // Modal Carousel Functions
@@ -498,7 +475,14 @@ window.goToModalSlide = function(index) {
 };
 
 function openHelpModal() {
+    if (document.activeElement && document.activeElement !== document.body) {
+        lastFocusedElement = document.activeElement;
+    }
     helpModal.style.display = 'flex';
+    requestAnimationFrame(() => {
+        const closeBtn = document.getElementById('closeHelpModal');
+        if (closeBtn) closeBtn.focus();
+    });
 }
 
 

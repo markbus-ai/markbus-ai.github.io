@@ -1,0 +1,27 @@
+# Marcos Bustos | Backend Developer Python & Automatización
+> Desarrollador Backend especializado en Python (FastAPI/Flask), TypeScript, React, Firebase y automatización. Portfolio profesional con 7 proyectos en producción.
+
+## About
+- [Perfil Profesional](https://markbus-ai.github.io/): Python Backend & Automation Expert. Arquitecturas asincrónicas, APIs escalables, PostgreSQL, Docker, despliegue Linux.
+
+## Key Projects
+- [AppiarWeb / Beemore](https://markbus-ai.github.io/): Plataforma de gestión apícola en producción. React 19, TypeScript, Firebase, MUI, TanStack Query, Leaflet, offline-first.
+- [BlackFire E-Commerce](https://blackfire.com.ar/): E-commerce Django + React + Docker en producción.
+- [MozoPlus](https://markbus-ai.github.io/): Sistema de pedidos en tiempo real con FastAPI, WebSockets y Flutter.
+- [whatsplay](https://github.com/markbus-ai/whatsplay): Librería Open Source para automatización de WhatsApp Web con Playwright.
+- [whatsapp-bot](https://markbus-ai.github.io/): Bot WhatsApp con +5000 mensajes/mes procesados (94.7% éxito).
+- [mutils](https://github.com/markbus-ai/mutils): CLI utilities en C (OCR, port slayer, nuke, smart extract).
+- [qrgen](https://markbus-ai.github.io/qrgen): Generador QR con React + FastAPI + Python + personalización avanzada.
+
+## Experience
+- Beemore / Appi.ar (2026-Actualidad): Freelance Full-Stack Developer. AppiarWeb, Firebase, Flutter, Cloudinary.
+- Bicicletería Amigorena (2024-2025): Bot de atención automatizada 24/7.
+- MozoPlus (2024): Backend FastAPI + WebSockets.
+
+## Stack
+Python (Asyncio), FastAPI, Flask, TypeScript, React 19, Firebase, PostgreSQL, Docker, Playwright, Flutter, Linux, Git, Cloudinary, MUI, TanStack Query
+
+## Contact
+- GitHub: https://github.com/markbus-ai
+- LinkedIn: https://www.linkedin.com/in/marcos-bustos-7327962ab/
+- Email: marcosbustos.dev@gmail.com

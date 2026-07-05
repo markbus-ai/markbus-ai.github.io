@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
     <meta name="twitter:description" content="Portfolio - Desarrollador Backend Python, FastAPI, Docker y Experto en Automatización.">
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="last-modified" content="2026-01-29">
+    <meta name="last-modified" content="2026-07-05">
     <meta name="theme-color" content="#0d1117">
     <meta property="og:locale" content="es_ES">
     <meta property="og:image:width" content="1200">
@@ -35,19 +35,56 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Marcos Bustos",
+      "givenName": "Marcos",
+      "familyName": "Bustos",
       "url": "https://markbus-ai.github.io",
       "image": "https://markbus-ai.github.io/img/portfolio-preview.png",
-      "description": "Desarrollador Backend Python & Experto en Automatización",
-      "jobTitle": "Backend Developer",
+      "description": "Desarrollador Backend especializado en Python, FastAPI, TypeScript, React y automatización. Creador de AppiarWeb, MozoPlus y la librería Open Source whatsplay. +5000 mensajes/mes automatizados con 94.7% de efectividad.",
+      "disambiguatingDescription": "Backend Developer Python & Automation Expert de Mar del Plata, Argentina. Freelance para Beemore/Appi.ar y Bicicletería Amigorena.",
+      "jobTitle": "Backend Developer & Full Stack Freelance",
+      "email": "marcosbustos.dev@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mar del Plata",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "Argentina"
+      },
       "sameAs": [
         "https://github.com/markbus-ai",
         "https://www.linkedin.com/in/marcos-bustos-7327962ab/"
       ],
       "knowsLanguage": ["es", "en"],
-      "knowsAbout": ["Python", "FastAPI", "Docker", "Playwright", "PostgreSQL", "Linux", "Automatización", "WebSockets", "Asyncio"],
+      "knowsAbout": ["Python", "FastAPI", "Docker", "Playwright", "PostgreSQL", "Linux", "Automatización", "WebSockets", "Asyncio", "TypeScript", "React", "Firebase", "Flutter", "MUI", "TanStack Query", "Cloudinary"],
       "workLocation": {
         "@type": "Place",
-        "address": "Argentina"
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mar del Plata",
+          "addressRegion": "Buenos Aires",
+          "addressCountry": "Argentina"
+        }
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "ISFT 204"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Marcos Bustos | Backend Developer Python & Automatización",
+      "url": "https://markbus-ai.github.io",
+      "description": "Portfolio profesional de Marcos Bustos. Desarrollador Backend Python, FastAPI, TypeScript, React, Firebase y automatización. 7 proyectos en producción.",
+      "inLanguage": "es",
+      "about": {
+        "@type": "Person",
+        "name": "Marcos Bustos"
       }
     }
     </script>
@@ -72,35 +109,40 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
     <link rel="alternate" hreflang="es" href="https://markbus-ai.github.io">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" as="style" fetchpriority="high">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap"></noscript>
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <div class="terminal-window">
+    <div class="terminal-window" id="main-content">
         <div class="terminal-header">
-            <div class="window-controls">
+            <div class="window-controls" aria-hidden="true">
                 <div class="control close"></div>
                 <div class="control minimize"></div>
                 <div class="control maximize"></div>
             </div>
-            <div class="window-title">[user@mbustos-portfolio ~]$ THU JAN 29 2026 11:01:28</div>
+            <div class="window-title">[user@mbustos-portfolio ~]$ SUN JUL 05 2026 12:00:00</div>
         </div>
 
         <div class="terminal-body">
             <!-- Navigation Bar (Always Visible) -->
             <div class="nav-buttons" style="margin: 0 0 30px 0; border-top: none; border-bottom: 1px solid var(--border-color); padding-bottom: 20px;">
-                <button class="nav-btn" data-target="home">~/home</button>
-                <button class="nav-btn" data-target="about_me">./about_me</button>
-                <button class="nav-btn" data-target="projects">ls projects/</button>
-                <button class="nav-btn" data-target="experience">cat experience.log</button>
-                <button class="nav-btn" data-target="contact">./contact</button>
+                <button class="nav-btn" data-target="home" aria-label="Ir a inicio">~/home</button>
+                <button class="nav-btn" data-target="about_me" aria-label="Ir a acerca de mí">./about_me</button>
+                <button class="nav-btn" data-target="projects" aria-label="Ver proyectos">ls projects/</button>
+                <button class="nav-btn" data-target="experience" aria-label="Ver experiencia laboral">cat experience.log</button>
+                <button class="nav-btn" data-target="contact" aria-label="Ver contacto">./contact</button>
             </div>
 
             <!-- Hero Section / Home -->
             <section id="home" class="active">
                 <div class="hero-container" style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap;">
                     <!-- Avatar Area -->
-                    <div class="hero-avatar">
+                    <div class="hero-avatar" aria-hidden="true">
                         <div class="avatar-ascii">
                            <pre style="font-size: 0.5rem; line-height: 0.5rem; color: var(--green-color);">
       /$$$$$$ 
@@ -137,7 +179,7 @@
                             </p>
 
                             <div class="hero-actions">
-                                <a href="img/marcossbustoss.pdf" target="_blank" class="nav-btn" style="display: inline-block; width: auto; text-align: center;">
+                                <a href="img/marcossbustoss.pdf" target="_blank" rel="noopener noreferrer" class="nav-btn" style="display: inline-block; width: auto; text-align: center;" aria-label="Descargar CV en PDF (se abre en nueva pestaña)">
                                     ⬇ Download CV.pdf
                                 </a>
                             </div>
@@ -152,7 +194,7 @@
                     <span class="prompt">[user@mbustos ~]$</span> ls -la ./projects/
                 </div>
                 <div class="section-output">
-                    <p>Listing 14 items in projects/...</p>
+                    <p>Listing 7 items in projects/...</p>
                     <br>
                     <div class="projects-list" id="projectGrid">
                         <!-- Filled by JS -->
@@ -166,9 +208,15 @@
                     <span class="prompt">[user@mbustos ~]$</span> cat about_me.md
                 </div>
                 <div class="section-output about-content">
-                    <p style="color: var(--gray-color)"># Objetivo Profesional</p>
+                    <h2 style="color: var(--gray-color); font-size: 1rem;"># Objetivo Profesional</h2>
                     <br>
-                    <p>Desarrollador Backend con sólida base técnica en <strong>Python</strong> y <strong>automatización</strong>.</p>
+                    <p>Desarrollador Backend con base técnica en <strong>Python</strong> y <strong>automatización</strong>. Experiencia en FastAPI, TypeScript, React, Firebase, PostgreSQL y Docker.</p>
+                    <br>
+                    <h3 style="color: var(--text-color); font-size: 1rem;">¿Qué tipo de proyectos desarrolla Marcos Bustos?</h3>
+                    <p>Sistemas de gestión en producción como <strong>AppiarWeb</strong> (plataforma apícola con React 19, TypeScript, Firebase y sincronización offline-first), <strong>MozoPlus</strong> (sistema de pedidos en tiempo real con FastAPI y WebSockets) y <strong>whatsapp-bot</strong> (bot de atención automatizada que procesó +5,000 mensajes mensuales con 94.7% de efectividad).</p>
+                    <br>
+                    <h3 style="color: var(--text-color); font-size: 1rem;">¿Qué tecnologías utiliza?</h3>
+                    <p>Backend con <strong>Python asincrónico</strong> (FastAPI, Flask), frontend con <strong>React 19 y TypeScript</strong>, bases de datos <strong>PostgreSQL y Firebase</strong>, orquestación con <strong>Docker</strong>, automatización con <strong>Playwright</strong> y despliegue en <strong>Linux</strong>. También desarrollo mobile con <strong>Flutter</strong>.</p>
                     <br>
                     <p>Mi objetivo es implementar soluciones que reduzcan la intervención manual en un <strong>80%</strong> y mejoren la escalabilidad de APIs. Busco aplicar mi experiencia en mantenimiento de sistemas en producción y arquitecturas asincrónicas para elevar la eficiencia operativa.</p>
                     <br>
@@ -176,12 +224,16 @@
                     <div class="tech-tags topic-tags">
                         <span class="tech-tag">Python (Asyncio)</span>
                         <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">React 19</span>
+                        <span class="tech-tag">Firebase</span>
                         <span class="tech-tag">PostgreSQL</span>
                         <span class="tech-tag">Playwright</span>
                         <span class="tech-tag">Docker</span>
                         <span class="tech-tag">Linux (SysAdmin)</span>
                         <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">MUI</span>
+                        <span class="tech-tag">TanStack Query</span>
                     </div>
                 </div>
             </section>
@@ -197,10 +249,13 @@
                         <div class="timeline-item">
                             <div class="timeline-date">2026 - Actualidad</div>
                             <div class="timeline-content">
-                                <h3>Backend & Mobile Developer</h3>
-                                <p class="text-sm">Beemore (Freelance) | Appi.ar</p>
-                                <p class="text-gray">- Mantenimiento correctivo y resolución de bugs.</p>
-                                <p class="text-gray">- Optimización e integración con Flutter.</p>
+                                <h3>Freelance Backend & Mobile Developer</h3>
+                                <p class="text-sm">Beemore / Appi.ar</p>
+                                <p class="text-gray">- Desarrollo full-stack de AppiarWeb (React 19 + TypeScript + Firebase + MUI) en equipo de 2 devs.</p>
+                                <p class="text-gray">- Backend en Firebase (Auth, Firestore, Storage, Functions) y frontend mobile con Flutter.</p>
+                                <p class="text-gray">- Integración con Cloudinary para gestión y optimización multimedia.</p>
+                                <p class="text-gray">- Refactorización, optimización de performance y hardening de seguridad.</p>
+                                <p class="text-gray">- Arquitectura modular con offline-first para zonas sin conectividad estable.</p>
                             </div>
                         </div>
 
@@ -255,16 +310,16 @@
                     <p>Initiating communication protocols...</p>
                     <p>Channels open:</p>
                     <div class="contact-links">
-                        <a href="https://github.com/markbus-ai" target="_blank" class="contact-link">
+                        <a href="https://github.com/markbus-ai" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="GitHub (se abre en nueva pestaña)">
                             <span>GitHub</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/marcos-bustos-7327962ab/" target="_blank" class="contact-link">
+                        <a href="https://www.linkedin.com/in/marcos-bustos-7327962ab/" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="LinkedIn (se abre en nueva pestaña)">
                             <span>LinkedIn</span>
                         </a>
                         <a href="mailto:markbustos1912@gmail.com" class="contact-link">
                             <span>Email</span>
                         </a>
-                        <a href="img/marcossbustoss.pdf" target="_blank" class="contact-link">
+                        <a href="img/marcossbustoss.pdf" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Descargar CV en PDF (se abre en nueva pestaña)">
                             <span>Download CV</span>
                         </a>
                     </div>
@@ -274,7 +329,7 @@
             <!-- Interactive Terminal Input -->
             <div class="terminal-input-area">
                 <span class="prompt">[user@mbustos ~]$</span>
-                <input type="text" id="commandInput" class="terminal-input" autocomplete="off" autofocus>
+                <input type="text" id="commandInput" class="terminal-input" autocomplete="off">
             </div>
             <div style="margin-top: 10px; font-size: 0.8rem; color: var(--gray-color);">
                 (Type 'help' for available commands or use the buttons above)
@@ -284,9 +339,9 @@
 
     <!-- Modal for Project Details -->
     <!-- Terminal Project Modal -->
-    <div id="projectModal" class="modal">
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-label="Detalles del proyecto">
         <div class="modal-content">
-            <span class="close-modal" id="closeProjectModal">&times;</span>
+            <span class="close-modal" id="closeProjectModal" aria-label="Cerrar">&times;</span>
             <div class="modal-header">
                 <h2 id="modalTitle" style="color: var(--blue-color); margin-bottom: 15px;"></h2>
             </div>
@@ -314,9 +369,9 @@
     </div>
 
     <!-- Help Modal (New) -->
-    <div id="helpModal" class="modal">
+    <div id="helpModal" class="modal" role="dialog" aria-modal="true" aria-label="Ayuda de comandos">
         <div class="modal-content" style="max-width: 600px;">
-            <span class="close-modal" id="closeHelpModal">&times;</span>
+            <span class="close-modal" id="closeHelpModal" aria-label="Cerrar">&times;</span>
             <div class="modal-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">
                 <h2 style="color: var(--orange-color);">> Terminal Help Menu</h2>
             </div>
