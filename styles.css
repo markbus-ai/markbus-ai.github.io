@@ -1,5 +1,6 @@
 :root {
     --bg-color: #0d1117;
+    --page-bg: #000;
     --text-color: #c9d1d9;
     --border-color: #30363d;
     --green-color: #2ea043;
@@ -19,8 +20,12 @@
     padding: 0;
 }
 
+html {
+    background-color: var(--page-bg);
+}
+
 body {
-    background-color: #000;
+    background-color: var(--page-bg);
     color: var(--text-color);
     font-family: var(--font-mono);
     min-height: 100vh;
@@ -43,7 +48,7 @@ body {
     padding: 8px 16px;
     border-radius: 0 0 4px 4px;
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     text-decoration: none;
     transition: top 0.1s;
 }
@@ -97,7 +102,7 @@ body {
 
 .window-title {
     color: var(--gray-color);
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-family: var(--font-mono);
 }
 
@@ -224,11 +229,11 @@ a:hover {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    font-size: 1.1rem;
+    font-size: 1.125rem;
 }
 
 .hero-output h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 15px;
     color: #fff;
     letter-spacing: -1px;
@@ -298,6 +303,15 @@ section.active {
 .clickable-image {
     cursor: pointer;
     transition: filter 0.2s;
+}
+
+/* Single-image cards: constrain the media to the frame instead of relying on
+   overflow clipping, so it no longer overflows its layout box. */
+.project-card-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
 }
 
 .clickable-image:hover {
@@ -400,7 +414,7 @@ section.active {
 }
 
 .project-title {
-    font-size: 1.15rem;
+    font-size: 1.125rem;
     font-weight: 600;
     color: var(--blue-color);
     margin: 0;
@@ -415,7 +429,7 @@ section.active {
 }
 
 .tech-tag {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     padding: 3px 8px;
     border: 1px solid var(--border-color);
     color: var(--text-color);
@@ -427,7 +441,7 @@ section.active {
     color: var(--text-color);
     margin-bottom: 15px;
     flex: 1; 
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.5;
 }
 
@@ -436,7 +450,7 @@ section.active {
     border-left: 2px solid var(--green-color);
     padding: 8px 12px;
     margin-bottom: 20px;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     color: #fff;
 }
 
@@ -455,7 +469,7 @@ section.active {
     min-height: 44px;
     border-radius: 4px;
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
     text-align: center;
@@ -521,17 +535,17 @@ section.active {
 .timeline-date {
     color: var(--green-color);
     margin-bottom: 5px;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
 }
 
 .timeline-content h3 {
     color: #fff;
     margin-bottom: 5px;
-    font-size: 1.1rem;
+    font-size: 1.125rem;
 }
 
 .text-sm {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     color: var(--blue-color);
     margin-bottom: 5px;
 }
@@ -570,7 +584,7 @@ section.active {
 /* About Content */
 .about-content {
     max-width: 800px;
-    font-size: 1.05rem;
+    font-size: 1rem;
 }
 
 .topic-tags {
@@ -581,7 +595,7 @@ section.active {
 }
 
 .topic-tags .tech-tag {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     border-color: var(--blue-color);
     color: var(--blue-color);
     padding: 5px 12px;
@@ -802,6 +816,7 @@ section.active {
     font-family: var(--font-mono);
     font-size: 1rem;
     flex: 1;
+    min-width: 0;
     outline: none;
     margin-left: 10px;
     caret-color: var(--text-color);
@@ -811,7 +826,7 @@ section.active {
 .terminal-feedback {
     min-height: 1.2em;
     margin-top: 8px;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     color: var(--red-color);
 }
 
@@ -835,23 +850,17 @@ section.active {
         padding: 18px;
     }
 
-    /* Keep the nav on one row: horizontal scroll instead of a wall of buttons */
+    /* Wrap the nav so every section stays visible instead of hiding items in a scroll strip */
     .nav-buttons {
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         gap: 8px;
-        overflow-x: auto;
-        padding-bottom: 12px;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .nav-buttons::-webkit-scrollbar {
-        display: none;
     }
 
     .nav-btn {
         flex: 0 0 auto;
         white-space: nowrap;
+        padding: 8px 12px;
+        font-size: 0.875rem;
     }
 
     .projects-list {
@@ -865,6 +874,13 @@ section.active {
 
     .hero-command {
         justify-content: center;
+    }
+}
+
+/* The full title (prompt + date) does not fit on small screens; keep the prompt */
+@media (max-width: 560px) {
+    .wt-date {
+        display: none;
     }
 }
 

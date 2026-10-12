@@ -284,9 +284,9 @@ function renderProjects() {
                         View Details
                     </button>
                     ${project.links 
-                        ? project.links.map(l => `<a href="${l.url}" target="_blank" class="btn-action btn-secondary">${l.label} <span style="font-size: 0.7em">↗</span></a>`).join('')
+                        ? project.links.map(l => `<a href="${l.url}" target="_blank" class="btn-action btn-secondary">${l.label} <span aria-hidden="true">↗</span></a>`).join('')
                         : project.link 
-                            ? `<a href="${project.link}" target="_blank" class="btn-action btn-secondary">Repo <span style="font-size: 0.7em">↗</span></a>` 
+                            ? `<a href="${project.link}" target="_blank" class="btn-action btn-secondary">Repo <span aria-hidden="true">↗</span></a>` 
                             : `<button class="btn-action btn-secondary" disabled style="opacity:0.5; cursor:not-allowed;">Private</button>`
                     }
                 </div>

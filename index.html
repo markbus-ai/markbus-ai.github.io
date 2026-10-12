@@ -173,17 +173,17 @@
                 <div class="control minimize"></div>
                 <div class="control maximize"></div>
             </div>
-            <div class="window-title" id="terminalDate">[user@mbustos-portfolio ~]$ LOADING...</div>
+            <div class="window-title" id="terminalDate"><span class="wt-prompt">[user@mbustos-portfolio ~]$</span> <span class="wt-date">LOADING...</span></div>
         </div>
 
         <div class="terminal-body">
             <!-- Navigation Bar (Always Visible) -->
             <nav class="nav-buttons" aria-label="Secciones del portfolio">
-                <button class="nav-btn" data-target="home" aria-label="Ir a inicio">~/home</button>
-                <button class="nav-btn" data-target="about_me" aria-label="Ir a acerca de mí">./about_me</button>
-                <button class="nav-btn" data-target="projects" aria-label="Ver proyectos">ls projects/</button>
-                <button class="nav-btn" data-target="experience" aria-label="Ver experiencia laboral">cat experience.log</button>
-                <button class="nav-btn" data-target="contact" aria-label="Ver contacto">./contact</button>
+                <button class="nav-btn" data-target="home" aria-label="~/home — Ir a inicio">~/home</button>
+                <button class="nav-btn" data-target="about_me" aria-label="./about_me — Acerca de mí">./about_me</button>
+                <button class="nav-btn" data-target="projects" aria-label="ls projects/ — Ver proyectos">ls projects/</button>
+                <button class="nav-btn" data-target="experience" aria-label="cat experience.log — Experiencia laboral">cat experience.log</button>
+                <button class="nav-btn" data-target="contact" aria-label="./contact — Contacto">./contact</button>
             </nav>
 
             <!-- Hero Section / Home -->
@@ -227,8 +227,8 @@
                             </p>
 
                             <div class="hero-actions">
-                                <a href="img/marcossbustoss.pdf" target="_blank" rel="noopener noreferrer" class="nav-btn" style="display: inline-block; width: auto; text-align: center;" aria-label="Descargar CV en PDF (se abre en nueva pestaña)">
-                                    ⬇ Download CV.pdf
+                                <a href="img/marcossbustoss.pdf" target="_blank" rel="noopener noreferrer" class="nav-btn" style="display: inline-block; width: auto; text-align: center;" aria-label="Download CV.pdf (se abre en nueva pestaña)">
+                                    <span aria-hidden="true">⬇</span> Download CV.pdf
                                 </a>
                             </div>
                         </div>
@@ -256,16 +256,16 @@
                     <span class="prompt">[user@mbustos ~]$</span> cat about_me.md
                 </div>
                 <div class="section-output about-content">
-                    <h2 style="color: var(--gray-color); font-size: 1rem;">Marcos Bustos - Desarrollador Backend en Mar del Plata, Argentina</h2>
+                    <h2 style="color: var(--gray-color); font-size: 1.25rem;">Marcos Bustos - Desarrollador Backend en Mar del Plata, Argentina</h2>
                     <br>
-                    <h2 style="color: var(--gray-color); font-size: 1rem;"># Objetivo Profesional</h2>
+                    <h2 style="color: var(--gray-color); font-size: 1.25rem;"># Objetivo Profesional</h2>
                     <br>
                     <p>Desarrollador Backend con base técnica en <strong>Python</strong> y <strong>automatización</strong>. Experiencia en FastAPI, TypeScript, React, Firebase, PostgreSQL y Docker.</p>
                     <br>
-                    <h3 style="color: var(--text-color); font-size: 1rem;">¿Qué tipo de proyectos desarrolla Marcos Bustos?</h3>
+                    <h3 style="color: var(--text-color); font-size: 1.125rem;">¿Qué tipo de proyectos desarrolla Marcos Bustos?</h3>
                     <p>Sistemas de gestión en producción como <strong>AppiarWeb</strong> (plataforma apícola con React 19, TypeScript, Firebase y sincronización offline-first), <strong>MozoPlus</strong> (sistema de pedidos en tiempo real con FastAPI y WebSockets) y <strong>whatsapp-bot</strong> (bot de atención automatizada que procesó +5,000 mensajes mensuales con 94.7% de efectividad).</p>
                     <br>
-                    <h3 style="color: var(--text-color); font-size: 1rem;">¿Qué tecnologías utiliza?</h3>
+                    <h3 style="color: var(--text-color); font-size: 1.125rem;">¿Qué tecnologías utiliza?</h3>
                     <p>Backend con <strong>Python asincrónico</strong> (FastAPI, Flask), frontend con <strong>React 19 y TypeScript</strong>, bases de datos <strong>PostgreSQL y Firebase</strong>, orquestación con <strong>Docker</strong>, automatización con <strong>Playwright</strong> y despliegue en <strong>Linux</strong>. También desarrollo mobile con <strong>Flutter</strong>.</p>
                     <br>
                     <p>Mi objetivo es implementar soluciones que reduzcan la intervención manual en un <strong>80%</strong> y mejoren la escalabilidad de APIs. Busco aplicar mi experiencia en mantenimiento de sistemas en producción y arquitecturas asincrónicas para elevar la eficiencia operativa.</p>
@@ -286,7 +286,7 @@
                         <span class="tech-tag">TanStack Query</span>
                     </div>
                     <br>
-                    <p style="color: var(--gray-color); font-size: 0.9rem; border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: 15px;">Marcos Bustos, Mar del Plata, Buenos Aires, Argentina - Backend Developer freelance</p>
+                    <p style="color: var(--gray-color); font-size: 0.875rem; border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: 15px;">Marcos Bustos, Mar del Plata, Buenos Aires, Argentina - Backend Developer freelance</p>
                 </div>
             </section>
 
@@ -383,7 +383,7 @@
                         <a href="mailto:marcosbustos.dev@gmail.com" class="contact-link">
                             <span>Email</span>
                         </a>
-                        <a href="img/marcossbustoss.pdf" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Descargar CV en PDF (se abre en nueva pestaña)">
+                        <a href="img/marcossbustoss.pdf" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Download CV (se abre en nueva pestaña)">
                             <span>Download CV</span>
                         </a>
                     </div>
@@ -396,7 +396,7 @@
                 <input type="text" id="commandInput" class="terminal-input" autocomplete="off" aria-label="Comando de terminal">
             </div>
             <div class="terminal-feedback" id="terminalFeedback" role="status" aria-live="polite"></div>
-            <div style="margin-top: 10px; font-size: 0.8rem; color: var(--gray-color);">
+            <div style="margin-top: 10px; font-size: 0.75rem; color: var(--gray-color);">
                 (Type 'help' for available commands or use the buttons above)
             </div>
         </div>
@@ -408,21 +408,21 @@
         <div class="modal-content">
             <button type="button" class="close-modal" id="closeProjectModal" aria-label="Cerrar">&times;</button>
             <div class="modal-header">
-                <h2 id="modalTitle" style="color: var(--blue-color); margin-bottom: 15px;"></h2>
+                <h2 id="modalTitle" style="color: var(--blue-color); font-size: 1.25rem; margin-bottom: 15px;"></h2>
             </div>
             
             <div class="modal-body-content">
-                <p id="modalDescription" style="margin-bottom: 20px; font-size: 1.1rem;"></p>
+                <p id="modalDescription" style="margin-bottom: 20px; font-size: 1.125rem;"></p>
                 
                 <div id="modalTags" class="tech-tags" style="margin-bottom: 25px;"></div>
                 
                 <div class="modal-section">
-                    <h3 style="color: var(--orange-color); font-size: 1rem; margin-bottom: 8px;">> Challenge:</h3>
+                    <h3 style="color: var(--orange-color); font-size: 1.125rem; margin-bottom: 8px;">> Challenge:</h3>
                     <p id="modalChallenge" style="color: var(--gray-color);"></p>
                 </div>
 
                 <div class="modal-section" style="margin-top: 15px;">
-                    <h3 style="color: var(--green-color); font-size: 1rem; margin-bottom: 8px;">> Solution:</h3>
+                    <h3 style="color: var(--green-color); font-size: 1.125rem; margin-bottom: 8px;">> Solution:</h3>
                     <p id="modalSolution" style="color: var(--gray-color);"></p>
                 </div>
 
@@ -438,7 +438,7 @@
         <div class="modal-content" style="max-width: 600px;">
             <button type="button" class="close-modal" id="closeHelpModal" aria-label="Cerrar">&times;</button>
             <div class="modal-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">
-                <h2 id="helpModalTitle" style="color: var(--orange-color);">> Terminal Help Menu</h2>
+                <h2 id="helpModalTitle" style="color: var(--orange-color); font-size: 1.25rem;">> Terminal Help Menu</h2>
             </div>
             <div class="help-grid">
                 <div class="help-item">
@@ -466,7 +466,7 @@
                     <span class="desc">Limpiar pantalla</span>
                 </div>
             </div>
-            <div style="margin-top: 20px; font-size: 0.8rem; color: var(--gray-color); text-align: center;">
+            <div style="margin-top: 20px; font-size: 0.75rem; color: var(--gray-color); text-align: center;">
                 [ Press ESC or click X to close ]
             </div>
         </div>
@@ -488,7 +488,8 @@
             const hh = String(d.getHours()).padStart(2,'0');
             const mm = String(d.getMinutes()).padStart(2,'0');
             const ss = String(d.getSeconds()).padStart(2,'0');
-            el.textContent = `[user@mbustos-portfolio ~]$ ${day} ${mon} ${date} ${year} ${hh}:${mm}:${ss}`;
+            const dateEl = el.querySelector('.wt-date');
+            if (dateEl) dateEl.textContent = `${day} ${mon} ${date} ${year} ${hh}:${mm}:${ss}`;
         })();
     </script>
 </body>

@@ -28,7 +28,7 @@ Backend plus full-stack, delivered end to end: async Python / FastAPI services t
 
 ## Capabilities and Constraints
 
-- Static HTML, CSS, and vanilla JavaScript — no build step, no framework, no package manager.
+- Static HTML, CSS, and vanilla JavaScript — no build step and no framework. A dev-only `package.json` runs the lintapple UI checks (`npm run lint:ui`); nothing is generated from it at deploy time.
 - One page with sections: Home / `whoami`, Projects / `ls projects/`, About / `cat about_me`, Experience / `cat experience.log`, Contact / `./contact`.
 - Interactive terminal input supports `whoami`, `ls projects/`, `cat about_me`, `cat experience.log`, `./contact`, `clear`, and `help`.
 - Project cards and content are data-driven from `script.js`; images live in `img/`.
