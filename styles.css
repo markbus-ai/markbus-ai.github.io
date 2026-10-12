@@ -3,6 +3,8 @@
     --text-color: #c9d1d9;
     --border-color: #30363d;
     --green-color: #2ea043;
+    --green-btn: #238636;        /* AA-safe green for filled surfaces with white text (4.6:1) */
+    --green-btn-hover: #1f7a30;
     --orange-color: #d29922;
     --blue-color: #58a6ff;
     --red-color: #da3633;
@@ -36,7 +38,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
-    background: var(--green-color);
+    background: var(--green-btn);
     color: #fff;
     padding: 8px 16px;
     border-radius: 0 0 4px 4px;
@@ -123,6 +125,25 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Browser surfaces themed from the palette */
+::selection {
+    background: rgba(46, 160, 67, 0.35);
+    color: #fff;
+}
+
+:focus-visible {
+    outline: 2px solid var(--blue-color);
+    outline-offset: 2px;
+}
+
+/* Keep the terminal title on one line on narrow screens */
+.window-title {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .prompt {
     color: var(--green-color);
     margin-right: 10px;
@@ -151,10 +172,11 @@ a:hover {
 .nav-buttons {
     display: flex;
     gap: 15px;
-    margin: 30px 0;
+    margin: 0 0 30px 0;
     flex-wrap: wrap;
-    border-top: 1px solid var(--border-color);
-    padding-top: 20px;
+    border-top: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
 }
 
 .nav-btn {
@@ -162,8 +184,10 @@ a:hover {
     border: 1px solid var(--border-color);
     color: var(--text-color);
     padding: 8px 16px;
+    min-height: 44px;
     border-radius: 4px;
     font-family: var(--font-mono);
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s;
     text-align: left;
@@ -187,6 +211,13 @@ a:hover {
 .hero-section {
     margin-bottom: 20px;
     animation: fadeIn 0.4s ease-out;
+}
+
+.hero-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .hero-command {
@@ -312,8 +343,8 @@ section.active {
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
     border: none;
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 1rem;
@@ -325,8 +356,16 @@ section.active {
     transition: opacity 0.2s, background 0.2s;
 }
 
-.project-card-image:hover .card-carousel-btn {
+.project-card-image:hover .card-carousel-btn,
+.card-carousel-btn:focus-visible {
     opacity: 1;
+}
+
+/* Touch devices have no hover: keep the controls visible */
+@media (hover: none), (pointer: coarse) {
+    .card-carousel-btn {
+        opacity: 1;
+    }
 }
 
 .card-carousel-btn:hover {
@@ -413,6 +452,7 @@ section.active {
 .btn-action {
     flex: 1;
     padding: 8px 12px;
+    min-height: 44px;
     border-radius: 4px;
     font-family: var(--font-mono);
     font-size: 0.85rem;
@@ -428,14 +468,14 @@ section.active {
 }
 
 .btn-primary {
-    background-color: var(--green-color);
-    border: 1px solid var(--green-color);
+    background-color: var(--green-btn);
+    border: 1px solid var(--green-btn);
     color: #fff;
 }
 
 .btn-primary:hover {
-    background-color: #3bb652;
-    border-color: #3bb652;
+    background-color: var(--green-btn-hover);
+    border-color: var(--green-color);
 }
 
 .btn-secondary {
@@ -513,7 +553,7 @@ section.active {
     align-items: center;
     justify-content: center;
     width: 120px;
-    height: 40px;
+    height: 44px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     color: var(--text-color);
@@ -521,7 +561,7 @@ section.active {
 }
 
 .contact-link:hover {
-    background-color: var(--green-color);
+    background-color: var(--green-btn);
     border-color: var(--green-color);
     color: #fff;
     text-decoration: none;
@@ -580,10 +620,20 @@ section.active {
     position: absolute;
     top: 20px;
     right: 25px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-family: var(--font-mono);
     font-size: 2rem;
+    line-height: 1;
     cursor: pointer;
     color: var(--red-color);
-    line-height: 1;
+    border-radius: 4px;
 }
 
 .close-modal:hover {
@@ -697,7 +747,7 @@ section.active {
 .modal-thumb.active {
     border-color: var(--green-color);
     opacity: 1;
-    box-shadow: 0 0 8px rgba(46, 160, 67, 0.6);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 /* Single Image in Modal */
@@ -738,6 +788,11 @@ section.active {
     padding-top: 20px;
     display: flex;
     align-items: center;
+    transition: border-color 0.2s;
+}
+
+.terminal-input-area:focus-within {
+    border-top-color: var(--green-color);
 }
 
 .terminal-input {
@@ -750,6 +805,14 @@ section.active {
     outline: none;
     margin-left: 10px;
     caret-color: var(--text-color);
+}
+
+/* Live feedback line for the interactive terminal */
+.terminal-feedback {
+    min-height: 1.2em;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--red-color);
 }
 
 /* Mobile Responsiveness */
@@ -767,12 +830,30 @@ section.active {
     .hero-output h1 {
         font-size: 2.5rem;
     }
-    
-    .nav-buttons {
-        flex-direction: column;
-        gap: 10px;
+
+    .terminal-body {
+        padding: 18px;
     }
-    
+
+    /* Keep the nav on one row: horizontal scroll instead of a wall of buttons */
+    .nav-buttons {
+        flex-wrap: nowrap;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 12px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-buttons::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
     .projects-list {
         grid-template-columns: 1fr;
     }

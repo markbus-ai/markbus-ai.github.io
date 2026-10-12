@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcos Bustos | Backend Developer Python & Automatización</title>
-    <meta name="description" content="Portfolio de Marcos Bustos - Desarrollador Backend Python, FastAPI, Docker y Experto en Automatización. Soluciones robustas y eficientes.">
-    <meta name="keywords" content="Backend Developer, Python, FastAPI, Docker, Playwright, SQL, Automatización">
+    <title>Marcos Bustos | Backend Developer Python Mar del Plata - FastAPI & Automatización</title>
+    <meta name="description" content="Portfolio de Marcos Bustos, Desarrollador Backend Python en Mar del Plata. FastAPI, Docker, React y automatización WhatsApp. +5000 msgs/mes.">
+    <meta name="keywords" content="Marcos Bustos Mar del Plata, Marcos Bustos Python, Backend Developer, Python, FastAPI, Docker, Playwright, SQL, Automatización">
     <meta name="author" content="Marcos Bustos">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://markbus-ai.github.io/">
@@ -23,8 +23,9 @@
     <meta name="twitter:description" content="Portfolio - Desarrollador Backend Python, FastAPI, Docker y Experto en Automatización.">
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="last-modified" content="2026-07-05">
+    <meta name="last-modified" content="2026-08-29">
     <meta name="theme-color" content="#0d1117">
+    <meta name="color-scheme" content="dark">
     <meta property="og:locale" content="es_ES">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -34,7 +35,9 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": "https://markbus-ai.github.io/#person",
       "name": "Marcos Bustos",
+      "alternateName": ["markbus-ai", "Marcos Bustos Mar del Plata"],
       "givenName": "Marcos",
       "familyName": "Bustos",
       "url": "https://markbus-ai.github.io",
@@ -51,7 +54,8 @@
       },
       "sameAs": [
         "https://github.com/markbus-ai",
-        "https://www.linkedin.com/in/marcos-bustos-7327962ab/"
+        "https://www.linkedin.com/in/marcos-bustos-7327962ab/",
+        "https://www.linkedin.com/in/marcos-bustos-fullstack/"
       ],
       "knowsLanguage": ["es", "en"],
       "knowsAbout": ["Python", "FastAPI", "Docker", "Playwright", "PostgreSQL", "Linux", "Automatización", "WebSockets", "Asyncio", "TypeScript", "React", "Firebase", "Flutter", "MUI", "TanStack Query", "Cloudinary"],
@@ -82,10 +86,47 @@
       "url": "https://markbus-ai.github.io",
       "description": "Portfolio profesional de Marcos Bustos. Desarrollador Backend Python, FastAPI, TypeScript, React, Firebase y automatización. 8 proyectos en producción.",
       "inLanguage": "es",
+      "publisher": {
+        "@id": "https://markbus-ai.github.io/#person"
+      },
       "about": {
         "@type": "Person",
         "name": "Marcos Bustos"
       }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Quién es Marcos Bustos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Marcos Bustos es Desarrollador Backend Python de Mar del Plata, Argentina, especializado en FastAPI, Docker, React y automatización. Creador de AppiarWeb, MozoPlus y la librería open source whatsplay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué hace Marcos Bustos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Desarrolla sistemas backend escalables con Python asincrónico, APIs con FastAPI, automatización WhatsApp con Playwright (+5000 mensajes/mes, 94.7% efectividad) y aplicaciones full-stack con React, TypeScript y Firebase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde trabaja Marcos Bustos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Marcos Bustos trabaja como Backend Developer freelance en Mar del Plata, Buenos Aires, Argentina, para clientes como Beemore/Appi.ar y Bicicletería Amigorena, con servicios remotos para toda Argentina."
+          }
+        }
+      ]
     }
     </script>
     
@@ -118,7 +159,7 @@
 <body>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <div class="terminal-window" id="main-content">
+    <div class="terminal-window" id="main-content" tabindex="-1">
         <div class="terminal-header">
             <div class="window-controls" aria-hidden="true">
                 <div class="control close"></div>
@@ -130,17 +171,17 @@
 
         <div class="terminal-body">
             <!-- Navigation Bar (Always Visible) -->
-            <div class="nav-buttons" style="margin: 0 0 30px 0; border-top: none; border-bottom: 1px solid var(--border-color); padding-bottom: 20px;">
+            <nav class="nav-buttons" aria-label="Secciones del portfolio">
                 <button class="nav-btn" data-target="home" aria-label="Ir a inicio">~/home</button>
                 <button class="nav-btn" data-target="about_me" aria-label="Ir a acerca de mí">./about_me</button>
                 <button class="nav-btn" data-target="projects" aria-label="Ver proyectos">ls projects/</button>
                 <button class="nav-btn" data-target="experience" aria-label="Ver experiencia laboral">cat experience.log</button>
                 <button class="nav-btn" data-target="contact" aria-label="Ver contacto">./contact</button>
-            </div>
+            </nav>
 
             <!-- Hero Section / Home -->
             <section id="home" class="active">
-                <div class="hero-container" style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap;">
+                <div class="hero-container">
                     <!-- Avatar Area -->
                     <div class="hero-avatar" aria-hidden="true">
                         <div class="avatar-ascii">
@@ -208,6 +249,8 @@
                     <span class="prompt">[user@mbustos ~]$</span> cat about_me.md
                 </div>
                 <div class="section-output about-content">
+                    <h2 style="color: var(--gray-color); font-size: 1rem;">Marcos Bustos - Desarrollador Backend en Mar del Plata, Argentina</h2>
+                    <br>
                     <h2 style="color: var(--gray-color); font-size: 1rem;"># Objetivo Profesional</h2>
                     <br>
                     <p>Desarrollador Backend con base técnica en <strong>Python</strong> y <strong>automatización</strong>. Experiencia en FastAPI, TypeScript, React, Firebase, PostgreSQL y Docker.</p>
@@ -235,6 +278,8 @@
                         <span class="tech-tag">MUI</span>
                         <span class="tech-tag">TanStack Query</span>
                     </div>
+                    <br>
+                    <p style="color: var(--gray-color); font-size: 0.9rem; border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: 15px;">Marcos Bustos, Mar del Plata, Buenos Aires, Argentina - Backend Developer freelance</p>
                 </div>
             </section>
 
@@ -317,7 +362,7 @@
                         <a href="https://www.linkedin.com/in/marcos-bustos-7327962ab/" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="LinkedIn (se abre en nueva pestaña)">
                             <span>LinkedIn</span>
                         </a>
-                        <a href="mailto:markbustos1912@gmail.com" class="contact-link">
+                        <a href="mailto:marcosbustos.dev@gmail.com" class="contact-link">
                             <span>Email</span>
                         </a>
                         <a href="img/marcossbustoss.pdf" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Descargar CV en PDF (se abre en nueva pestaña)">
@@ -330,8 +375,9 @@
             <!-- Interactive Terminal Input -->
             <div class="terminal-input-area">
                 <span class="prompt">[user@mbustos ~]$</span>
-                <input type="text" id="commandInput" class="terminal-input" autocomplete="off">
+                <input type="text" id="commandInput" class="terminal-input" autocomplete="off" aria-label="Comando de terminal">
             </div>
+            <div class="terminal-feedback" id="terminalFeedback" role="status" aria-live="polite"></div>
             <div style="margin-top: 10px; font-size: 0.8rem; color: var(--gray-color);">
                 (Type 'help' for available commands or use the buttons above)
             </div>
@@ -340,9 +386,9 @@
 
     <!-- Modal for Project Details -->
     <!-- Terminal Project Modal -->
-    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-label="Detalles del proyecto">
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <span class="close-modal" id="closeProjectModal" aria-label="Cerrar">&times;</span>
+            <button type="button" class="close-modal" id="closeProjectModal" aria-label="Cerrar">&times;</button>
             <div class="modal-header">
                 <h2 id="modalTitle" style="color: var(--blue-color); margin-bottom: 15px;"></h2>
             </div>
@@ -370,11 +416,11 @@
     </div>
 
     <!-- Help Modal (New) -->
-    <div id="helpModal" class="modal" role="dialog" aria-modal="true" aria-label="Ayuda de comandos">
+    <div id="helpModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="helpModalTitle">
         <div class="modal-content" style="max-width: 600px;">
-            <span class="close-modal" id="closeHelpModal" aria-label="Cerrar">&times;</span>
+            <button type="button" class="close-modal" id="closeHelpModal" aria-label="Cerrar">&times;</button>
             <div class="modal-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">
-                <h2 style="color: var(--orange-color);">> Terminal Help Menu</h2>
+                <h2 id="helpModalTitle" style="color: var(--orange-color);">> Terminal Help Menu</h2>
             </div>
             <div class="help-grid">
                 <div class="help-item">

@@ -115,12 +115,35 @@ const modalImages = document.getElementById('modalImages');
 const helpModal = document.getElementById('helpModal');
 const closeHelpBtn = document.getElementById('closeHelpModal');
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+// Stop the autoplaying showcase videos when the visitor asks for less motion
+function applyMotionPreference() {
+    if (!prefersReducedMotion.matches) return;
+    document.querySelectorAll('video[autoplay]').forEach(video => {
+        video.autoplay = false;
+        video.removeAttribute('autoplay');
+        video.pause();
+    });
+}
+
+// Live feedback line under the terminal prompt
+let feedbackTimer = null;
+function showFeedback(message) {
+    const el = document.getElementById('terminalFeedback');
+    if (!el) return;
+    el.textContent = message;
+    clearTimeout(feedbackTimer);
+    feedbackTimer = setTimeout(() => { el.textContent = ''; }, 2500);
+}
+
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
     setupNavigation();
     setupModals();
-    
+    applyMotionPreference();
+
     // Set Home as active default
     setActiveSection('home');
 });
@@ -138,10 +161,12 @@ function setupNavigation() {
 function setActiveSection(targetId) {
     // Update Buttons
     navButtons.forEach(btn => {
-        if(btn.getAttribute('data-target') === targetId) {
-            btn.classList.add('active');
+        const isActive = btn.getAttribute('data-target') === targetId;
+        btn.classList.toggle('active', isActive);
+        if (isActive) {
+            btn.setAttribute('aria-current', 'true');
         } else {
-            btn.classList.remove('active');
+            btn.removeAttribute('aria-current');
         }
     });
 
@@ -155,6 +180,9 @@ function setActiveSection(targetId) {
         // Small timeout to simulate terminal output delay? Optional but cool.
         setTimeout(() => {
             targetSection.classList.add('active');
+            // Reset the viewport so the new section starts at the top
+            const terminalBody = document.querySelector('.terminal-body');
+            if (terminalBody) terminalBody.scrollTop = 0;
         }, 50);
     }
 }
@@ -366,6 +394,24 @@ function setupModals() {
             }
         }
     });
+
+    // Keep keyboard focus inside the open modal
+    [projectModal, helpModal].forEach(modal => {
+        modal.addEventListener('keydown', (e) => {
+            if (e.key !== 'Tab') return;
+            const focusables = modal.querySelectorAll('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        });
+    });
 }
 
 function openModal(project) {
@@ -450,6 +496,7 @@ function openModal(project) {
     }
 
     projectModal.style.display = 'flex';
+    applyMotionPreference();
 
     // Focus management: move focus to modal close button
     requestAnimationFrame(() => {
@@ -468,14 +515,14 @@ window.changeModalSlide = function(direction) {
     if (slides.length === 0) return;
     
     slides[currentModalSlide].classList.remove('active');
-    thumbs[currentModalSlide].classList.remove('active');
+    thumbs[currentModalSlide]?.classList.remove('active');
     
     currentModalSlide += direction;
     if (currentModalSlide < 0) currentModalSlide = slides.length - 1;
     if (currentModalSlide >= slides.length) currentModalSlide = 0;
     
     slides[currentModalSlide].classList.add('active');
-    thumbs[currentModalSlide].classList.add('active');
+    thumbs[currentModalSlide]?.classList.add('active');
 };
 
 window.goToModalSlide = function(index) {
@@ -485,12 +532,12 @@ window.goToModalSlide = function(index) {
     if (slides.length === 0) return;
     
     slides[currentModalSlide].classList.remove('active');
-    thumbs[currentModalSlide].classList.remove('active');
+    thumbs[currentModalSlide]?.classList.remove('active');
     
     currentModalSlide = index;
     
     slides[currentModalSlide].classList.add('active');
-    thumbs[currentModalSlide].classList.add('active');
+    thumbs[currentModalSlide]?.classList.add('active');
 };
 
 function openHelpModal() {
@@ -577,10 +624,6 @@ function handleCommand(cmd) {
     if(match) {
         setActiveSection(cmd);
     } else {
-        // Visual feedback for error?
-        // Using placeholder temporarily
-        const originalPlaceholder = commandInput.placeholder;
-        commandInput.placeholder = `command not found: ${cmd}`;
-        setTimeout(() => commandInput.placeholder = '', 2000);
+        showFeedback(`command not found: ${cmd}`);
     }
 }
