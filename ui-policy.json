@@ -1,0 +1,42 @@
+{
+  "fonts": ["Fira Code", "monospace"],
+  "fontSizes": [12, 14, 16, 18, 20, 24, 32, 40, 48, 64],
+  "typeRules": [
+    { "selector": "h1", "sizes": [24, 32, 40, 48, 64] },
+    { "selector": "h2", "sizes": [20, 24, 32] },
+    { "selector": "h3", "sizes": [18, 20, 24] },
+    { "selector": "button, [role=button]", "sizes": [14, 16] },
+    { "selector": ".close-modal", "sizes": [32] }
+  ],
+  "minControlSize": 15,
+  "controlSizeRules": [],
+  "minControlGap": 8,
+  "minControlInset": 8,
+  "controlContainers": ["[data-ui-container]"],
+  "minLayoutGap": 8,
+  "bannedCopy": ["unlock your potential", "seamlessly", "game-changing"],
+  "viewports": [{ "width": 390, "height": 844 }, { "width": 1440, "height": 900 }],
+  "colorSchemes": ["dark"],
+  "exceptions": [
+    {
+      "selector": "html",
+      "rules": ["root-background"],
+      "reason": "Explicit #000 page background is set; the transparency heuristic also matches the computed rgb(0, 0, 0) of pure black."
+    },
+    {
+      "selector": ".skip-link",
+      "rules": ["content-clipping"],
+      "reason": "Standard skip link: kept offscreen until it receives keyboard focus."
+    },
+    {
+      "selector": ".avatar-ascii pre",
+      "rules": ["font-size"],
+      "reason": "Decorative ASCII avatar drawn to size, not body copy."
+    },
+    {
+      "selector": ".placeholder-ascii pre",
+      "rules": ["font-size"],
+      "reason": "Decorative ASCII placeholder art for missing screenshots."
+    }
+  ]
+}

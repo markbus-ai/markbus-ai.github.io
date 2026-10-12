@@ -1,0 +1,28 @@
+{
+  "states": [
+    {
+      "name": "projects",
+      "action": "click",
+      "selector": ".nav-btn[data-target=\"projects\"]",
+      "ready": { "selector": "#projects.active" }
+    },
+    {
+      "name": "about_me",
+      "action": "click",
+      "selector": ".nav-btn[data-target=\"about_me\"]",
+      "ready": { "selector": "#about_me.active" }
+    },
+    {
+      "name": "experience",
+      "action": "click",
+      "selector": ".nav-btn[data-target=\"experience\"]",
+      "ready": { "selector": "#experience.active" }
+    },
+    {
+      "name": "contact",
+      "action": "click",
+      "selector": ".nav-btn[data-target=\"contact\"]",
+      "ready": { "selector": "#contact.active" }
+    }
+  ]
+}

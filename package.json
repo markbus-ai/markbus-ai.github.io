@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "devDependencies": {
+    "lintapple": "^0.1.20"
+  },
+  "scripts": {
+    "serve": "python3 -m http.server 8788 --bind 127.0.0.1",
+    "lint:ui": "lintapple http://127.0.0.1:8788 --interactions interactions.json"
+  }
+}
