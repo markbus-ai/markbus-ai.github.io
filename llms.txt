@@ -1,12 +1,12 @@
-# Marcos Bustos | Backend Developer Python & Automatización
-> Desarrollador Backend especializado en Python (FastAPI/Flask), TypeScript, React, Firebase y automatización. Portfolio profesional con 7 proyectos en producción.
+# Marcos Bustos | Backend Developer Python Mar del Plata - FastAPI & Automatización
+> Portfolio de Marcos Bustos, Desarrollador Backend Python en Mar del Plata, Argentina. Especializado en Python (FastAPI/Flask), TypeScript, React, Firebase y automatización. 8 proyectos en producción. +5000 msgs/mes automatizados.
 
 ## About
-- [Perfil Profesional](https://markbus-ai.github.io/): Python Backend & Automation Expert. Arquitecturas asincrónicas, APIs escalables, PostgreSQL, Docker, despliegue Linux.
+- [Perfil Profesional](https://markbus-ai.github.io/): Marcos Bustos - Python Backend & Automation Expert en Mar del Plata, Argentina. Arquitecturas asincrónicas, APIs escalables, PostgreSQL, Docker, despliegue Linux. Freelance en Mar del Plata, Buenos Aires.
 
 ## Key Projects
 - [AppiarWeb / Beemore](https://markbus-ai.github.io/): Plataforma de gestión apícola en producción. React 19, TypeScript, Firebase, MUI, TanStack Query, Leaflet, offline-first.
-- [BlackFire E-Commerce](https://blackfire.com.ar/): E-commerce Django + React + Docker en producción.
+- [BlackFire E-Commerce](https://blackfire.com.ar/): E-commerce FastAPI + React + Mercado Pago + Docker en producción.
 - [MozoPlus](https://markbus-ai.github.io/): Sistema de pedidos en tiempo real con FastAPI, WebSockets y Flutter.
 - [whatsplay](https://github.com/markbus-ai/whatsplay): Librería Open Source para automatización de WhatsApp Web con Playwright.
 - [whatsapp-bot](https://markbus-ai.github.io/): Bot WhatsApp con +5000 mensajes/mes procesados (94.7% éxito).
